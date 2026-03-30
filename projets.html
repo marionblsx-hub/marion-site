@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Identité visuelle & Direction artistique | Marion Balsaux</title>
+<meta name="description" content="Portfolio de Marion Balsaux — illustrations, packaging, branding, print. Graphiste en Belgique.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+
+/* ══ PAGE HERO ══════════════════════════════ */
+.port-hero {
+  padding: 180px 80px 100px;
+  background: var(--dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+}
+.port-hero-deco {
+  position: absolute;
+  right: -20px;
+  top: 80px;
+  font-family: var(--serif);
+  font-size: 280px;
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(181,152,106,.07);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.port-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(72px, 10vw, 130px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: .88;
+  letter-spacing: -.025em;
+  opacity: 0;
+  animation: fadeUp .8s ease .15s forwards;
+}
+.port-hero-title em { font-style: italic; color: var(--gold-light); display: block; }
+.port-hero-right {
+  padding-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp .8s ease .4s forwards;
+}
+.port-hero-count {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(253,252,249,.3);
+  margin-bottom: 24px;
+}
+.port-hero-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.port-hero-cat {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(253,252,249,.45);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.port-hero-cat::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: rgba(181,152,106,.4);
+  flex-shrink: 0;
+}
+
+/* ══ PROJET SECTION ═════════════════════════ */
+.projet {
+  padding: 0;
+  border-top: 1px solid rgba(181,152,106,.15);
+}
+.projet:nth-child(odd) { background: var(--white); }
+.projet:nth-child(even) { background: var(--beige); }
+
+/* Header projet */
+/* ── En-tête projet — layout éditorial ── */
+.projet {
+  border-bottom: 1px solid rgba(181,152,106,.1);
+}
+.projet-header {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 0 48px;
+  align-items: start;
+  padding: 72px 80px 48px;
+}
+/* Grand numéro décoratif */
+.projet-num {
+  font-family: var(--serif);
+  font-size: 88px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(181,152,106,.14);
+  line-height: .85;
+  margin-top: -12px;
+  user-select: none;
+}
+.projet-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--dark);
+  padding-top: 4px;
+}
+.projet-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+.projet-cat {
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.projet-year {
+  font-size: 11px;
+  color: var(--text-light);
+}
+.projet-desc {
+  grid-column: 2 / 4;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.85;
+  max-width: 620px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(181,152,106,.12);
+}
+
+/* ── Galerie — 2 colonnes, compact ── */
+.projet-gallery { padding: 16px 80px 96px; }
+
+/* Split : main 58% gauche + mosaïque droite */
+.gallery-split {
+  display: grid;
+  grid-template-columns: 58% 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Image de base */
+.gallery-natural {
+  display: block;
+  cursor: zoom-in;
+  background: var(--beige-dark);
+  transition: opacity .28s;
+}
+.gallery-natural:hover { opacity: .84; }
+
+/* Image principale : proportions naturelles, plafond en hauteur */
+.gallery-split-main .gallery-natural {
+  max-width: 100%;
+  max-height: 68vh;
+  width: auto;
+  height: auto;
+}
+
+/* Mosaïque droite : colonnes CSS — proportions naturelles, pas de crop */
+.gallery-split-side {
+  columns: 2;
+  column-gap: 12px;
+}
+.gallery-split-side .gallery-natural {
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: unset;
+  break-inside: avoid;
+  margin-bottom: 12px;
+  max-height: none;
+}
+
+/* Projet solo (1 seule image) */
+.gallery-full .gallery-natural {
+  max-width: 640px;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+/* Fond blanc uniquement pour PNGs à transparence réelle */
+img[src*="erba-02.png"],
+img[src*="herbe-01.png"],
+img[src*="suite-06.png"],
+img[src*="suite-07.png"],
+img[src*="suite-08.png"],
+img[src*="suite-09.png"] { background: #ffffff !important; }
+
+/* ══ LIGHTBOX ════════════════════════════════ */
+.lb {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(20,18,16,.96);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.lb.open { opacity: 1; pointer-events: all; }
+.lb-inner { position: relative; max-width: 90vw; max-height: 88vh; display: flex; flex-direction: column; align-items: center; }
+.lb-img {
+  max-width: 90vw; max-height: 78vh;
+  object-fit: contain;
+  display: block;
+}
+.lb-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 16px 0 0; gap: 16px;
+}
+.lb-info { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(253,252,249,.35); }
+.lb-counter { font-size: 11px; color: rgba(253,252,249,.3); }
+.lb-nav { display: flex; gap: 8px; }
+.lb-btn {
+  background: none; border: 1px solid rgba(253,252,249,.18);
+  color: rgba(253,252,249,.55); padding: 8px 18px;
+  font-family: var(--sans); font-size: 11px; letter-spacing: .1em;
+  cursor: pointer; transition: border-color .2s, color .2s;
+}
+.lb-btn:hover { border-color: var(--gold); color: var(--gold); }
+.lb-close {
+  position: absolute; top: -44px; right: 0;
+  background: none; border: 1px solid rgba(253,252,249,.18);
+  color: rgba(253,252,249,.55); width: 36px; height: 36px;
+  font-size: 18px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  transition: border-color .2s, color .2s;
+}
+.lb-close:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ══ RESPONSIVE ═════════════════════════════ */
+@media(max-width:900px){
+  .port-hero { padding: 120px 24px 72px; grid-template-columns: 1fr; }
+  .port-hero-right { display: none; }
+  .projet-header { grid-template-columns: 56px 1fr; padding: 48px 24px 32px; gap: 0 24px; }
+  .projet-num { font-size: 52px; }
+  .projet-meta { display: none; }
+  .projet-desc { grid-column: 2 / 3; margin-top: 12px; padding-top: 12px; }
+  .projet-gallery { padding: 0 24px 56px; }
+  .gallery-split { grid-template-columns: 1fr; }
+  .gallery-split-side { columns: 3; }
+  .gallery-split-main .gallery-natural { max-width: 100%; max-height: 60vw; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-mb"><span>Marion Balsaux</span><span>Direction Artistique</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="approche.html">Approche</a></li>
+    <li><a href="projets.html" class="active">Projets</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Parlons-en</a>
+</nav>
+
+<!-- HERO -->
+<section class="port-hero">
+  <div class="port-hero-deco">P</div>
+  <h1 class="port-hero-title">Mes<br><em>projets.</em></h1>
+  <div class="port-hero-right">
+    <p class="port-hero-count">7 projets sélectionnés</p>
+    <div class="port-hero-cats">
+      <span class="port-hero-cat">Identité visuelle & branding</span>
+      <span class="port-hero-cat">Illustration & création</span>
+      <span class="port-hero-cat">Print & communication</span>
+      <span class="port-hero-cat">Packaging</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     01 — LES ROYALES MARIONNETTES
+══════════════════════════════════════════ -->
+<section class="projet" id="royales">
+  <div class="projet-header">
+    <span class="projet-num">01</span>
+    <h2 class="projet-title">Les Royales Marionnettes</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Branding · Print · Scénographie</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Communication visuelle pour le spectacle <em>Loup y es-tu ?</em> — affiche et flyer. Scénographie de la mise en scène. Branding complet de la compagnie et flocage du camion itinérant : une identité forte pour une compagnie de marionnettes belge.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/royales/royales-01.jpg" alt="Les Royales Marionnettes" class="gallery-natural" onclick="lb('royales',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/royales/royales-02.png" alt="" class="gallery-natural" onclick="lb('royales',1)">
+        <img src="images/royales/royales-04.jpg" alt="" class="gallery-natural" onclick="lb('royales',2)">
+        <img src="images/royales/royales-05.jpg" alt="" class="gallery-natural" onclick="lb('royales',3)">
+        <img src="images/royales/royales-06.jpg" alt="" class="gallery-natural" onclick="lb('royales',4)">
+        <img src="images/royales/royales-07.jpg" alt="" class="gallery-natural" onclick="lb('royales',5)">
+        <img src="images/royales/royales-08.png" alt="" class="gallery-natural" onclick="lb('royales',6)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     02 — ILLUSTRATION VECTORIELLE
+══════════════════════════════════════════ -->
+<section class="projet" id="dad">
+  <div class="projet-header">
+    <span class="projet-num">02</span>
+    <h2 class="projet-title">Illustration vectorielle</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Illustration & création</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Technique mixte aquarelle & vecteur — palette panafricaine, figures expressives.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-full">
+      <img src="images/dad/dad-01.png" alt="Illustration vectorielle" class="gallery-natural" onclick="lb('dad',0)">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     03 — LUCHA SIGUE
+══════════════════════════════════════════ -->
+<section class="projet" id="lucha">
+  <div class="projet-header">
+    <span class="projet-num">03</span>
+    <h2 class="projet-title">Lucha Sigue</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Branding · Identité · Packaging</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Charte graphique et branding complet pour cette marque française de CBD premium — une identité engagée et affirmée. Packaging de la gamme <em>Cortège de Têtes</em> : du positionnement au produit fini.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/lucha/lucha-01.png" alt="Lucha Sigue" class="gallery-natural" onclick="lb('lucha',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/lucha/lucha-02.jpg" alt="" class="gallery-natural" onclick="lb('lucha',1)">
+        <img src="images/lucha/lucha-03.png" alt="" class="gallery-natural" onclick="lb('lucha',2)">
+        <img src="images/lucha/lucha-04.png" alt="" class="gallery-natural" onclick="lb('lucha',3)">
+        <img src="images/lucha/lucha-05.png" alt="" class="gallery-natural" onclick="lb('lucha',4)">
+        <img src="images/lucha/lucha-06.jpg" alt="" class="gallery-natural" onclick="lb('lucha',5)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     04 — ILLUSTRATIONS PERSONNELLES
+══════════════════════════════════════════ -->
+<section class="projet" id="illus">
+  <div class="projet-header">
+    <span class="projet-num">04</span>
+    <h2 class="projet-title">Illustrations personnelles</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Illustration & création</span>
+      <span class="projet-year">2024–2025</span>
+    </div>
+    <p class="projet-desc">Portraits floraux, figures graphiques, symbolisme — série personnelle sur Procreate.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/illustrations/illus-01.png" alt="Illustrations personnelles" class="gallery-natural" onclick="lb('illus',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/illustrations/illus-02.png" alt="" class="gallery-natural" onclick="lb('illus',1)">
+        <img src="images/illustrations/illus-03.png" alt="" class="gallery-natural" onclick="lb('illus',2)">
+        <img src="images/illustrations/illus-04.png" alt="" class="gallery-natural" onclick="lb('illus',3)">
+        <img src="images/illustrations/illus-05.png" alt="" class="gallery-natural" onclick="lb('illus',4)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     05 — L'HERBE EN FRANCE
+══════════════════════════════════════════ -->
+<section class="projet" id="herbe">
+  <div class="projet-header">
+    <span class="projet-num">05</span>
+    <h2 class="projet-title">L'Herbe en France</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Identité visuelle · Logo · Charte</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Création du logo et de la charte graphique pour cette marque de CBD française — une identité sobre, végétale et crédible pour un marché exigeant.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/herbe/herbe-01.png" alt="L'Herbe en France" class="gallery-natural" onclick="lb('herbe',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/herbe/herbe-02.png" alt="" class="gallery-natural" onclick="lb('herbe',1)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     06 — ERBA DI CORSICA & CANNEVYRE
+══════════════════════════════════════════ -->
+<section class="projet" id="erba">
+  <div class="projet-header">
+    <span class="projet-num">06</span>
+    <h2 class="projet-title">Erba di Corsica & Cannevyre</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Branding · Packaging premium</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Branding et packaging pour <em>Erba di Corsica</em>, première ligne de CBD premium corse — réflexion sur l'image de marque jusqu'au produit fini. Création du packaging <em>Cannevyre</em> pour leurs bonbons au miel et chanvre.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/erba/erba-01.png" alt="Erba di Corsica" class="gallery-natural" onclick="lb('erba',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/erba/erba-02.png" alt="" class="gallery-natural" onclick="lb('erba',1)">
+        <img src="images/erba/erba-03.png" alt="" class="gallery-natural" onclick="lb('erba',2)">
+        <img src="images/erba/erba-04.jpeg" alt="" class="gallery-natural" onclick="lb('erba',3)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     07 — LA SUITE DU MONDE
+══════════════════════════════════════════ -->
+<section class="projet" id="suite">
+  <div class="projet-header">
+    <span class="projet-num">07</span>
+    <h2 class="projet-title">La Suite du Monde</h2>
+    <div class="projet-meta">
+      <span class="projet-cat">Illustration · Web · Stratégie</span>
+      <span class="projet-year">2025</span>
+    </div>
+    <p class="projet-desc">Illustrations et habillage du site internet pour cet espace culturel belge. Réflexion stratégique sur l'image de marque et les réseaux sociaux — un univers visuel en lien direct avec leur mission et leurs valeurs.</p>
+  </div>
+  <div class="projet-gallery">
+    <div class="gallery-split">
+      <div class="gallery-split-main">
+        <img src="images/suite/suite-01.png" alt="La Suite du Monde" class="gallery-natural" onclick="lb('suite',0)">
+      </div>
+      <div class="gallery-split-side">
+        <img src="images/suite/suite-02.png" alt="" class="gallery-natural" onclick="lb('suite',1)">
+        <img src="images/suite/suite-03.png" alt="" class="gallery-natural" onclick="lb('suite',2)">
+        <img src="images/suite/suite-04.png" alt="" class="gallery-natural" onclick="lb('suite',3)">
+        <img src="images/suite/suite-05.png" alt="" class="gallery-natural" onclick="lb('suite',4)">
+        <img src="images/suite/suite-06.png" alt="" class="gallery-natural" onclick="lb('suite',5)">
+        <img src="images/suite/suite-07.png" alt="" class="gallery-natural" onclick="lb('suite',6)">
+        <img src="images/suite/suite-08.png" alt="" class="gallery-natural" onclick="lb('suite',7)">
+        <img src="images/suite/suite-09.png" alt="" class="gallery-natural" onclick="lb('suite',8)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <img src="images/site/logo_initiales.png" alt="" class="cta-mb-watermark" aria-hidden="true">
+  <div class="cta-mb-seal reveal">
+    <span class="cta-mb-letters">MB</span>
+  </div>
+  <span class="label" style="display:block;text-align:center;margin-bottom:20px;">Un projet en tête ?</span>
+  <h2 class="cta-title reveal">Créons quelque chose<br><em>ensemble.</em></h2>
+  <p class="cta-text reveal">Premier échange sans engagement — je réponds sous 48h.</p>
+  <a href="contact.html" class="btn btn--dark reveal">Prendre contact</a>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo-wrap">
+    <img src="images/site/logo_horizontal-white.png" alt="Marion Balsaux" class="footer-logo-img">
+  </a>
+  <ul class="footer-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="approche.html">Approche</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Marion Balsaux</span>
+</footer>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lb" id="lb" onclick="lbClose(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="lbHide()">×</button>
+    <img class="lb-img" id="lb-img" src="" alt="">
+    <div class="lb-bar">
+      <span class="lb-info" id="lb-info"></span>
+      <div class="lb-nav">
+        <button class="lb-btn" onclick="lbPrev()">← Préc.</button>
+        <button class="lb-btn" onclick="lbNext()">Suiv. →</button>
+      </div>
+      <span class="lb-counter" id="lb-counter"></span>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+const data = {
+  royales: {
+    name: 'Les Royales Marionnettes',
+    imgs: [
+      'images/royales/royales-01.jpg',
+      'images/royales/royales-02.png',
+      'images/royales/royales-04.jpg',
+      'images/royales/royales-05.jpg',
+      'images/royales/royales-06.jpg',
+      'images/royales/royales-07.jpg',
+      'images/royales/royales-08.png'
+    ]
+  },
+  dad: {
+    name: 'Illustration vectorielle',
+    imgs: ['images/dad/dad-01.png']
+  },
+  lucha: {
+    name: 'Lucha Sigue',
+    imgs: [
+      'images/lucha/lucha-01.png',
+      'images/lucha/lucha-02.jpg',
+      'images/lucha/lucha-03.png',
+      'images/lucha/lucha-04.png',
+      'images/lucha/lucha-05.png',
+      'images/lucha/lucha-06.jpg'
+    ]
+  },
+  illus: {
+    name: 'Illustrations personnelles',
+    imgs: [
+      'images/illustrations/illus-01.png',
+      'images/illustrations/illus-02.png',
+      'images/illustrations/illus-03.png',
+      'images/illustrations/illus-04.png',
+      'images/illustrations/illus-05.png'
+    ]
+  },
+  herbe: {
+    name: "L'Herbe en France",
+    imgs: [
+      'images/herbe/herbe-01.png',
+      'images/herbe/herbe-02.png'
+    ]
+  },
+  erba: {
+    name: 'Erba di Corsica & Cannevyre',
+    imgs: [
+      'images/erba/erba-01.png',
+      'images/erba/erba-02.png',
+      'images/erba/erba-03.png',
+      'images/erba/erba-04.jpeg'
+    ]
+  },
+  suite: {
+    name: 'La Suite du Monde',
+    imgs: [
+      'images/suite/suite-01.png',
+      'images/suite/suite-02.png',
+      'images/suite/suite-03.png',
+      'images/suite/suite-04.png',
+      'images/suite/suite-05.png',
+      'images/suite/suite-06.png',
+      'images/suite/suite-07.png',
+      'images/suite/suite-08.png',
+      'images/suite/suite-09.png'
+    ]
+  }
+};
+
+let cur = null, idx = 0;
+
+function lb(id, i) {
+  cur = id; idx = i;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lbUpdate();
+}
+
+function lbUpdate() {
+  const p = data[cur];
+  document.getElementById('lb-img').src = p.imgs[idx];
+  document.getElementById('lb-info').textContent = p.name;
+  document.getElementById('lb-counter').textContent = (idx + 1) + ' / ' + p.imgs.length;
+}
+
+function lbHide() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lbClose(e) {
+  if (e.target === document.getElementById('lb')) lbHide();
+}
+
+function lbPrev() {
+  const p = data[cur];
+  idx = (idx - 1 + p.imgs.length) % p.imgs.length;
+  lbUpdate();
+}
+
+function lbNext() {
+  const p = data[cur];
+  idx = (idx + 1) % p.imgs.length;
+  lbUpdate();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lb').classList.contains('open')) return;
+  if (e.key === 'Escape') lbHide();
+  if (e.key === 'ArrowLeft') lbPrev();
+  if (e.key === 'ArrowRight') lbNext();
+});
+</script>
+</body>
+</html>
