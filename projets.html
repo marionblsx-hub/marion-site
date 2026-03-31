@@ -198,12 +198,12 @@
 }
 
 /* Fond blanc uniquement pour PNGs à transparence réelle */
-img[src*="erba-02.png"],
-img[src*="herbe-01.png"],
-img[src*="suite-06.png"],
-img[src*="suite-07.png"],
-img[src*="suite-08.png"],
-img[src*="suite-09.png"] { background: #ffffff !important; }
+img[src*="erba-02.webp"],
+img[src*="herbe-01.webp"],
+img[src*="suite-06.webp"],
+img[src*="suite-07.webp"],
+img[src*="suite-08.webp"],
+img[src*="suite-09.webp"] { background: #ffffff !important; }
 
 /* ══ LIGHTBOX ════════════════════════════════ */
 .lb {
@@ -280,7 +280,23 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Parlons-en</a>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- Menu mobile overlay -->
+<div class="nav-mobile-overlay" id="nav-mobile-overlay" role="dialog" aria-modal="true">
+  <ul class="nav-mobile-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="approche.html">Approche</a></li>
+    <li><a href="projets.html" class="active">Projets</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-mobile-cta">Parlons de votre projet</a>
+  <span class="nav-mobile-deco">Marion Balsaux · Direction Artistique</span>
+</div>
 
 <!-- HERO -->
 <section class="port-hero">
@@ -313,15 +329,15 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/royales/royales-01.jpg" alt="Les Royales Marionnettes" class="gallery-natural" onclick="lb('royales',0)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-01.webp" alt="Les Royales Marionnettes" class="gallery-natural" onclick="lb('royales',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/royales/royales-02.png" alt="" class="gallery-natural" onclick="lb('royales',1)">
-        <img src="images/royales/royales-04.jpg" alt="" class="gallery-natural" onclick="lb('royales',2)">
-        <img src="images/royales/royales-05.jpg" alt="" class="gallery-natural" onclick="lb('royales',3)">
-        <img src="images/royales/royales-06.jpg" alt="" class="gallery-natural" onclick="lb('royales',4)">
-        <img src="images/royales/royales-07.jpg" alt="" class="gallery-natural" onclick="lb('royales',5)">
-        <img src="images/royales/royales-08.png" alt="" class="gallery-natural" onclick="lb('royales',6)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-02.webp" alt="" class="gallery-natural" onclick="lb('royales',1)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-04.webp" alt="" class="gallery-natural" onclick="lb('royales',2)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-05.webp" alt="" class="gallery-natural" onclick="lb('royales',3)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-06.webp" alt="" class="gallery-natural" onclick="lb('royales',4)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-07.webp" alt="" class="gallery-natural" onclick="lb('royales',5)">
+        <img loading="lazy" decoding="async" src="images/royales/royales-08.webp" alt="" class="gallery-natural" onclick="lb('royales',6)">
       </div>
     </div>
   </div>
@@ -342,7 +358,7 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   </div>
   <div class="projet-gallery">
     <div class="gallery-full">
-      <img src="images/dad/dad-01.png" alt="Illustration vectorielle" class="gallery-natural" onclick="lb('dad',0)">
+      <img loading="lazy" decoding="async" src="images/dad/dad-01.webp" alt="Illustration vectorielle" class="gallery-natural" onclick="lb('dad',0)">
     </div>
   </div>
 </section>
@@ -363,14 +379,14 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/lucha/lucha-01.png" alt="Lucha Sigue" class="gallery-natural" onclick="lb('lucha',0)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-01.webp" alt="Lucha Sigue" class="gallery-natural" onclick="lb('lucha',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/lucha/lucha-02.jpg" alt="" class="gallery-natural" onclick="lb('lucha',1)">
-        <img src="images/lucha/lucha-03.png" alt="" class="gallery-natural" onclick="lb('lucha',2)">
-        <img src="images/lucha/lucha-04.png" alt="" class="gallery-natural" onclick="lb('lucha',3)">
-        <img src="images/lucha/lucha-05.png" alt="" class="gallery-natural" onclick="lb('lucha',4)">
-        <img src="images/lucha/lucha-06.jpg" alt="" class="gallery-natural" onclick="lb('lucha',5)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-02.webp" alt="" class="gallery-natural" onclick="lb('lucha',1)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-03.webp" alt="" class="gallery-natural" onclick="lb('lucha',2)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-04.webp" alt="" class="gallery-natural" onclick="lb('lucha',3)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-05.webp" alt="" class="gallery-natural" onclick="lb('lucha',4)">
+        <img loading="lazy" decoding="async" src="images/lucha/lucha-06.webp" alt="" class="gallery-natural" onclick="lb('lucha',5)">
       </div>
     </div>
   </div>
@@ -392,13 +408,13 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/illustrations/illus-01.png" alt="Illustrations personnelles" class="gallery-natural" onclick="lb('illus',0)">
+        <img loading="lazy" decoding="async" src="images/illustrations/illus-01.webp" alt="Illustrations personnelles" class="gallery-natural" onclick="lb('illus',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/illustrations/illus-02.png" alt="" class="gallery-natural" onclick="lb('illus',1)">
-        <img src="images/illustrations/illus-03.png" alt="" class="gallery-natural" onclick="lb('illus',2)">
-        <img src="images/illustrations/illus-04.png" alt="" class="gallery-natural" onclick="lb('illus',3)">
-        <img src="images/illustrations/illus-05.png" alt="" class="gallery-natural" onclick="lb('illus',4)">
+        <img loading="lazy" decoding="async" src="images/illustrations/illus-02.webp" alt="" class="gallery-natural" onclick="lb('illus',1)">
+        <img loading="lazy" decoding="async" src="images/illustrations/illus-03.webp" alt="" class="gallery-natural" onclick="lb('illus',2)">
+        <img loading="lazy" decoding="async" src="images/illustrations/illus-04.webp" alt="" class="gallery-natural" onclick="lb('illus',3)">
+        <img loading="lazy" decoding="async" src="images/illustrations/illus-05.webp" alt="" class="gallery-natural" onclick="lb('illus',4)">
       </div>
     </div>
   </div>
@@ -420,10 +436,10 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/herbe/herbe-01.png" alt="L'Herbe en France" class="gallery-natural" onclick="lb('herbe',0)">
+        <img loading="lazy" decoding="async" src="images/herbe/herbe-01.webp" alt="L'Herbe en France" class="gallery-natural" onclick="lb('herbe',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/herbe/herbe-02.png" alt="" class="gallery-natural" onclick="lb('herbe',1)">
+        <img loading="lazy" decoding="async" src="images/herbe/herbe-02.webp" alt="" class="gallery-natural" onclick="lb('herbe',1)">
       </div>
     </div>
   </div>
@@ -445,12 +461,12 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/erba/erba-01.png" alt="Erba di Corsica" class="gallery-natural" onclick="lb('erba',0)">
+        <img loading="lazy" decoding="async" src="images/erba/erba-01.webp" alt="Erba di Corsica" class="gallery-natural" onclick="lb('erba',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/erba/erba-02.png" alt="" class="gallery-natural" onclick="lb('erba',1)">
-        <img src="images/erba/erba-03.png" alt="" class="gallery-natural" onclick="lb('erba',2)">
-        <img src="images/erba/erba-04.jpeg" alt="" class="gallery-natural" onclick="lb('erba',3)">
+        <img loading="lazy" decoding="async" src="images/erba/erba-02.webp" alt="" class="gallery-natural" onclick="lb('erba',1)">
+        <img loading="lazy" decoding="async" src="images/erba/erba-03.webp" alt="" class="gallery-natural" onclick="lb('erba',2)">
+        <img loading="lazy" decoding="async" src="images/erba/erba-04.webp" alt="" class="gallery-natural" onclick="lb('erba',3)">
       </div>
     </div>
   </div>
@@ -472,17 +488,17 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
   <div class="projet-gallery">
     <div class="gallery-split">
       <div class="gallery-split-main">
-        <img src="images/suite/suite-01.png" alt="La Suite du Monde" class="gallery-natural" onclick="lb('suite',0)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-01.webp" alt="La Suite du Monde" class="gallery-natural" onclick="lb('suite',0)">
       </div>
       <div class="gallery-split-side">
-        <img src="images/suite/suite-02.png" alt="" class="gallery-natural" onclick="lb('suite',1)">
-        <img src="images/suite/suite-03.png" alt="" class="gallery-natural" onclick="lb('suite',2)">
-        <img src="images/suite/suite-04.png" alt="" class="gallery-natural" onclick="lb('suite',3)">
-        <img src="images/suite/suite-05.png" alt="" class="gallery-natural" onclick="lb('suite',4)">
-        <img src="images/suite/suite-06.png" alt="" class="gallery-natural" onclick="lb('suite',5)">
-        <img src="images/suite/suite-07.png" alt="" class="gallery-natural" onclick="lb('suite',6)">
-        <img src="images/suite/suite-08.png" alt="" class="gallery-natural" onclick="lb('suite',7)">
-        <img src="images/suite/suite-09.png" alt="" class="gallery-natural" onclick="lb('suite',8)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-02.webp" alt="" class="gallery-natural" onclick="lb('suite',1)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-03.webp" alt="" class="gallery-natural" onclick="lb('suite',2)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-04.webp" alt="" class="gallery-natural" onclick="lb('suite',3)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-05.webp" alt="" class="gallery-natural" onclick="lb('suite',4)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-06.webp" alt="" class="gallery-natural" onclick="lb('suite',5)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-07.webp" alt="" class="gallery-natural" onclick="lb('suite',6)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-08.webp" alt="" class="gallery-natural" onclick="lb('suite',7)">
+        <img loading="lazy" decoding="async" src="images/suite/suite-09.webp" alt="" class="gallery-natural" onclick="lb('suite',8)">
       </div>
     </div>
   </div>
@@ -490,7 +506,7 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
 
 <!-- CTA -->
 <section class="cta-section">
-  <img src="images/site/logo_initiales.png" alt="" class="cta-mb-watermark" aria-hidden="true">
+  <img loading="lazy" decoding="async" src="images/site/logo_initiales.webp" alt="" class="cta-mb-watermark" aria-hidden="true">
   <div class="cta-mb-seal reveal">
     <span class="cta-mb-letters">MB</span>
   </div>
@@ -502,7 +518,7 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
 
 <footer>
   <a href="index.html" class="footer-logo-wrap">
-    <img src="images/site/logo_horizontal-white.png" alt="Marion Balsaux" class="footer-logo-img">
+    <img loading="lazy" decoding="async" src="images/site/logo_horizontal-white.webp" alt="Marion Balsaux" class="footer-logo-img">
   </a>
   <ul class="footer-nav">
     <li><a href="index.html">Accueil</a></li>
@@ -518,7 +534,7 @@ img[src*="suite-09.png"] { background: #ffffff !important; }
 <div class="lb" id="lb" onclick="lbClose(event)">
   <div class="lb-inner">
     <button class="lb-close" onclick="lbHide()">×</button>
-    <img class="lb-img" id="lb-img" src="" alt="">
+    <img loading="lazy" decoding="async" class="lb-img" id="lb-img" src="" alt="">
     <div class="lb-bar">
       <span class="lb-info" id="lb-info"></span>
       <div class="lb-nav">
@@ -536,68 +552,68 @@ const data = {
   royales: {
     name: 'Les Royales Marionnettes',
     imgs: [
-      'images/royales/royales-01.jpg',
-      'images/royales/royales-02.png',
-      'images/royales/royales-04.jpg',
-      'images/royales/royales-05.jpg',
-      'images/royales/royales-06.jpg',
-      'images/royales/royales-07.jpg',
-      'images/royales/royales-08.png'
+      'images/royales/royales-01.webp',
+      'images/royales/royales-02.webp',
+      'images/royales/royales-04.webp',
+      'images/royales/royales-05.webp',
+      'images/royales/royales-06.webp',
+      'images/royales/royales-07.webp',
+      'images/royales/royales-08.webp'
     ]
   },
   dad: {
     name: 'Illustration vectorielle',
-    imgs: ['images/dad/dad-01.png']
+    imgs: ['images/dad/dad-01.webp']
   },
   lucha: {
     name: 'Lucha Sigue',
     imgs: [
-      'images/lucha/lucha-01.png',
-      'images/lucha/lucha-02.jpg',
-      'images/lucha/lucha-03.png',
-      'images/lucha/lucha-04.png',
-      'images/lucha/lucha-05.png',
-      'images/lucha/lucha-06.jpg'
+      'images/lucha/lucha-01.webp',
+      'images/lucha/lucha-02.webp',
+      'images/lucha/lucha-03.webp',
+      'images/lucha/lucha-04.webp',
+      'images/lucha/lucha-05.webp',
+      'images/lucha/lucha-06.webp'
     ]
   },
   illus: {
     name: 'Illustrations personnelles',
     imgs: [
-      'images/illustrations/illus-01.png',
-      'images/illustrations/illus-02.png',
-      'images/illustrations/illus-03.png',
-      'images/illustrations/illus-04.png',
-      'images/illustrations/illus-05.png'
+      'images/illustrations/illus-01.webp',
+      'images/illustrations/illus-02.webp',
+      'images/illustrations/illus-03.webp',
+      'images/illustrations/illus-04.webp',
+      'images/illustrations/illus-05.webp'
     ]
   },
   herbe: {
     name: "L'Herbe en France",
     imgs: [
-      'images/herbe/herbe-01.png',
-      'images/herbe/herbe-02.png'
+      'images/herbe/herbe-01.webp',
+      'images/herbe/herbe-02.webp'
     ]
   },
   erba: {
     name: 'Erba di Corsica & Cannevyre',
     imgs: [
-      'images/erba/erba-01.png',
-      'images/erba/erba-02.png',
-      'images/erba/erba-03.png',
-      'images/erba/erba-04.jpeg'
+      'images/erba/erba-01.webp',
+      'images/erba/erba-02.webp',
+      'images/erba/erba-03.webp',
+      'images/erba/erba-04.webp'
     ]
   },
   suite: {
     name: 'La Suite du Monde',
     imgs: [
-      'images/suite/suite-01.png',
-      'images/suite/suite-02.png',
-      'images/suite/suite-03.png',
-      'images/suite/suite-04.png',
-      'images/suite/suite-05.png',
-      'images/suite/suite-06.png',
-      'images/suite/suite-07.png',
-      'images/suite/suite-08.png',
-      'images/suite/suite-09.png'
+      'images/suite/suite-01.webp',
+      'images/suite/suite-02.webp',
+      'images/suite/suite-03.webp',
+      'images/suite/suite-04.webp',
+      'images/suite/suite-05.webp',
+      'images/suite/suite-06.webp',
+      'images/suite/suite-07.webp',
+      'images/suite/suite-08.webp',
+      'images/suite/suite-09.webp'
     ]
   }
 };
