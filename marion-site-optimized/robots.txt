@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marionbalsaux.fr/sitemap.xml
