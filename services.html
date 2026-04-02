@@ -84,6 +84,69 @@
   line-height: 1.7;
 }
 
+/* Carte featured (Diagnostic) */
+.sv-card-featured {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  background: var(--white);
+  padding: 52px 48px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--gold);
+  border-bottom: 2px solid transparent;
+  transition: border-color .35s;
+}
+.sv-card-featured:hover { border-bottom-color: var(--gold); }
+.sv-card-featured .sv-card-num {
+  font-family: var(--serif);
+  font-size: 72px; font-style: italic; font-weight: 300;
+  color: rgba(181,152,106,.32); line-height: 1;
+  margin-bottom: 0;
+}
+.sv-card-featured-content { }
+.sv-card-featured-content .sv-card-title {
+  font-size: clamp(22px,2.5vw,32px);
+  margin-bottom: 14px;
+}
+.sv-card-featured-content .sv-card-desc {
+  margin-bottom: 0;
+  max-width: 480px;
+}
+.sv-card-featured-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+.sv-card-featured-meta .sv-card-tags {
+  text-align: right;
+}
+.sv-card-featured-meta .sv-card-footer {
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+.sv-card-featured-meta .sv-card-price {
+  font-size: 20px;
+}
+
+/* Bloc alternative (abonnement) */
+.sv-card-alt {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(181,152,106,.15);
+}
+
+@media(max-width:900px) {
+  .sv-card-featured {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 28px;
+  }
+  .sv-card-featured-meta { align-items: flex-start; }
+  .sv-card-featured-meta .sv-card-footer { flex-direction: column; }
+}
+
 /* Grille 2×2 */
 .sv-cards {
   display: grid;
@@ -287,14 +350,34 @@
 <section class="sv-section">
   <div class="sv-section-header reveal">
     <h2 class="sv-section-title">Ce que je <em>fais</em></h2>
-    <p class="sv-section-sub">Chaque mission est construite sur-mesure — pas de package tout fait, pas de réponse générique.</p>
+    <p class="sv-section-sub">Du diagnostic à l'accompagnement continu — chaque étape est pensée pour que votre image serve votre mission.</p>
+  </div>
+
+  <!-- CARTE FEATURED : Diagnostic -->
+  <div class="sv-card-featured reveal" data-delay="0">
+    <span class="sv-card-num">01</span>
+    <div class="sv-card-featured-content">
+      <h2 class="sv-card-title">Diagnostic stratégique <em>visuel</em></h2>
+      <p class="sv-card-desc">Votre image reflète-t-elle vraiment votre mission ? Un entretien stratégique suivi d'une analyse complète de votre communication visuelle — pour identifier ce qui fonctionne, ce qui manque, et les priorités à traiter. Vous repartez avec une feuille de route actionnable.</p>
+    </div>
+    <div class="sv-card-featured-meta">
+      <div class="sv-card-tags">
+        <span class="sv-card-tag">Entretien stratégique</span>
+        <span class="sv-card-tag">Analyse identité visuelle</span>
+        <span class="sv-card-tag">Rapport & feuille de route</span>
+      </div>
+      <div class="sv-card-footer">
+        <a href="contact.html" class="btn btn--light">Prendre contact</a>
+        <span class="sv-card-price">À partir de 350€</span>
+      </div>
+    </div>
   </div>
 
   <div class="sv-cards">
 
-    <!-- 01 -->
+    <!-- 02 -->
     <div class="sv-card reveal" data-delay="0">
-      <span class="sv-card-num">01</span>
+      <span class="sv-card-num">02</span>
       <h2 class="sv-card-title">Création visuelle &<br><em>direction artistique</em></h2>
       <p class="sv-card-desc">Illustrations, affiches, visuels réseaux — je crée des contenus visuels qui ont un univers propre. Pas du design générique : quelque chose qui vous ressemble vraiment.</p>
       <div class="sv-card-sep"></div>
@@ -309,9 +392,9 @@
       </div>
     </div>
 
-    <!-- 02 -->
+    <!-- 03 -->
     <div class="sv-card reveal" data-delay="80">
-      <span class="sv-card-num">02</span>
+      <span class="sv-card-num">03</span>
       <h2 class="sv-card-title">Identité &<br><em>image de marque</em></h2>
       <p class="sv-card-desc">Logo, palette, typographies, charte graphique — je construis une identité visuelle qui reflète qui vous êtes vraiment. On commence toujours par la stratégie, pas par le logo.</p>
       <div class="sv-card-sep"></div>
@@ -322,30 +405,34 @@
       </div>
       <div class="sv-card-footer">
         <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">À partir de 900€</span>
+        <span class="sv-card-price">À partir de 800€</span>
       </div>
     </div>
 
-    <!-- 03 -->
+    <!-- 04 -->
     <div class="sv-card reveal" data-delay="120">
-      <span class="sv-card-num">03</span>
+      <span class="sv-card-num">04</span>
       <h2 class="sv-card-title">Supports de<br><em>communication</em></h2>
       <p class="sv-card-desc">Affiches, packaging, brochures, templates réseaux — je décline votre identité sur tous les supports avec une cohérence visuelle impeccable d'un format à l'autre.</p>
       <div class="sv-card-sep"></div>
       <div class="sv-card-tags">
         <span class="sv-card-tag">Réseaux sociaux</span>
         <span class="sv-card-tag">Print & packaging</span>
-        <span class="sv-card-tag">Abonnement mensuel disponible</span>
       </div>
       <div class="sv-card-footer">
         <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">À partir de 600€ · 400€/mois</span>
+        <span class="sv-card-price">Projet ponctuel · sur devis</span>
+      </div>
+      <div class="sv-card-alt">
+        <span class="sv-card-tag">Abonnement mensuel</span>
+        <span class="sv-card-desc" style="font-size:14px;margin-top:8px;">Suivi communication, création de templates personnalisés, direction artistique continue.</span>
+        <span class="sv-card-price" style="margin-top:8px;">À partir de 400€/mois</span>
       </div>
     </div>
 
-    <!-- 04 -->
+    <!-- 05 -->
     <div class="sv-card reveal" data-delay="200">
-      <span class="sv-card-num">04</span>
+      <span class="sv-card-num">05</span>
       <h2 class="sv-card-title">Site web<br><em>sur-mesure</em></h2>
       <p class="sv-card-desc">Je conçois des sites web qui prolongent naturellement votre identité visuelle. Sites vitrines, portfolios, landing pages — pensés pour mettre en valeur votre activité avec cohérence. Pour les projets plus complexes, je collabore avec un développeur partenaire.</p>
       <div class="sv-card-sep"></div>
@@ -356,7 +443,7 @@
       </div>
       <div class="sv-card-footer">
         <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">Devis sur mesure</span>
+        <span class="sv-card-price">À partir de 1 000€</span>
       </div>
     </div>
 

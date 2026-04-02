@@ -34,7 +34,8 @@ a { color: inherit; }
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 64px; display: flex; justify-content: space-between; align-items: center; transition: background .4s ease, padding .4s ease; }
 nav.scrolled { background: rgba(245,240,232,.98); padding: 14px 64px; box-shadow: 0 1px 0 rgba(181,152,106,.2); }
 /* Logo in nav */
-.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+.nav-logo-img { width: 36px; height: 36px; flex-shrink: 0; border-radius: 2px; }
 /* Logo texte — Cormorant Garamond, élégant, fonctionne sur tous les fonds */
 .nav-logo-mb {
   display: flex;

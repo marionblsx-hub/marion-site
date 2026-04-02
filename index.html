@@ -23,8 +23,10 @@
 <meta property="og:url" content="https://marionbalsaux.fr/">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Marion Balsaux">
-<meta property="og:image" content="https://marionbalsaux.fr/images/site/photo-marion-hero.webp">
-<meta name="twitter:image" content="https://marionbalsaux.fr/images/site/photo-marion-hero.webp">
+<meta property="og:image" content="https://marionbalsaux.fr/images/site/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://marionbalsaux.fr/images/site/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Marion Balsaux — Graphiste & Directrice Artistique en Belgique">
 <meta name="twitter:description" content="Identité visuelle, packaging, illustration, site web sur-mesure. Une approche stratégique avant esthétique.">
@@ -36,7 +38,9 @@
    HERO
 ══════════════════════════════════════════ */
 .hero {
-  min-height: max(86vh, 620px);
+  height: 84vh;
+  min-height: 500px;
+  max-height: 820px;
   background: var(--dark);
   display: grid;
   grid-template-columns: 55% 45%;
@@ -73,10 +77,10 @@
 
 /* Colonne gauche */
 .hero-left {
-  padding: 140px 88px 72px 80px;
+  padding: 80px 88px 40px 80px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   z-index: 2;
 }
@@ -103,7 +107,7 @@
   letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   opacity: 0;
   animation: fadeUp .8s ease .2s forwards;
 }
@@ -114,7 +118,7 @@
   font-weight: 300;
   line-height: .88;
   color: var(--white);
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   letter-spacing: -.028em;
   opacity: 0;
   animation: fadeUp .8s ease .35s forwards;
@@ -126,9 +130,9 @@
 }
 
 .hero-desc {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.9;
+  line-height: 1.7;
   color: rgba(253,252,249,.62);
   max-width: 380px;
   margin-bottom: 0;
@@ -143,8 +147,8 @@
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeUp .8s ease .65s forwards;
-  margin-top: 44px;
-  padding-top: 36px;
+  margin-top: 28px;
+  padding-top: 22px;
   border-top: 1px solid rgba(253,252,249,.09);
 }
 
@@ -152,7 +156,7 @@
 .hero-meta {
   display: flex;
   gap: 36px;
-  margin-top: 56px;
+  margin-top: 18px;
   opacity: 0;
   animation: fadeIn 1.2s ease 1s forwards;
 }
@@ -211,7 +215,7 @@
 
 .hero-scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -414,6 +418,8 @@
 .svc {
   background: var(--dark-mid);
   padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
   transition: background .35s;
   cursor: none;
 }
@@ -461,6 +467,27 @@
   background: var(--gold);
   flex-shrink: 0;
   opacity: .5;
+}
+
+/* Grille 5 colonnes */
+.svcs-grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.svc-price {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(181,152,106,.2);
+}
+@media(max-width:1200px) {
+  .svcs-grid--5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media(max-width:900px) {
+  .svcs-grid--5 { grid-template-columns: 1fr; }
 }
 
 /* ══════════════════════════════════════════
@@ -706,6 +733,7 @@
 <header>
 <nav id="main-nav">
   <a href="index.html" class="nav-logo">
+    <img src="images/site/logo-mb.svg" alt="MB" class="nav-logo-img">
     <span class="nav-logo-mb"><span>Marion Balsaux</span><span>Direction Artistique</span></span>
   </a>
   <ul class="nav-links">
@@ -741,9 +769,9 @@
   <canvas id="hero-smoke" aria-hidden="true"></canvas>
   <div class="hero-bg-num">MB</div>
   <div class="hero-left">
-    <p class="hero-eyebrow">Graphiste · Directrice artistique · Belgique</p>
+    <p class="hero-eyebrow">Direction artistique stratégique · Belgique</p>
     <h1 class="hero-title">Marion<br><em>Balsaux</em></h1>
-    <p class="hero-desc">J'accompagne les entrepreneurs, les associations et les porteurs de projets à construire une image forte — pas seulement des visuels, une vraie réflexion sur ce que vous portez et comment le transmettre.</p>
+    <p class="hero-desc">J'accompagne les porteurs de projets à impact — entrepreneurs, associations, structures culturelles — à construire une image qui reflète vraiment leur mission. Pas un graphiste de plus qui livre des fichiers : une partenaire qui comprend votre projet avant de créer.</p>
     <div class="hero-actions">
       <a href="contact.html" class="btn btn--outline-w">Parlons de votre projet</a>
       <a href="projets.html" class="btn btn--outline-w" style="background:transparent">Voir mes projets</a>
@@ -810,30 +838,40 @@
     <div><span class="label label--light">Ce que je propose</span><h2 class="svcs-title">Mes <em>services</em></h2></div>
     <a href="services.html" class="btn btn--outline-w" style="font-size:11px">Voir le détail</a>
   </div>
-  <div class="svcs-grid">
+  <div class="svcs-grid svcs-grid--5">
     <div class="svc reveal" data-delay="0">
       <span class="svc-n">01</span>
+      <h3 class="svc-t">Diagnostic stratégique visuel</h3>
+      <p class="svc-d">Votre image reflète-t-elle vraiment qui vous êtes ? Une immersion dans votre projet pour identifier le décalage entre votre mission et votre communication visuelle.</p>
+      <div class="svc-tags"><span class="svc-tag">Entretien stratégique</span><span class="svc-tag">Analyse complète</span><span class="svc-tag">Feuille de route</span></div>
+      <span class="svc-price">À partir de 350€</span>
+    </div>
+    <div class="svc reveal" data-delay="60">
+      <span class="svc-n">02</span>
       <h3 class="svc-t">Création visuelle & direction artistique</h3>
       <p class="svc-d">Illustrations, affiches, visuels réseaux — des contenus qui ont un univers propre.</p>
       <div class="svc-tags"><span class="svc-tag">Direction artistique</span><span class="svc-tag">Illustration</span><span class="svc-tag">Cohérence visuelle</span></div>
+      <span class="svc-price">Sur devis</span>
     </div>
-    <div class="svc reveal" data-delay="80">
-      <span class="svc-n">02</span>
+    <div class="svc reveal" data-delay="120">
+      <span class="svc-n">03</span>
       <h3 class="svc-t">Identité & image de marque</h3>
       <p class="svc-d">Logo, palette, charte — une identité visuelle qui reflète qui vous êtes vraiment.</p>
       <div class="svc-tags"><span class="svc-tag">Logo & identité</span><span class="svc-tag">Charte graphique</span><span class="svc-tag">Stratégie</span></div>
+      <span class="svc-price">À partir de 800€</span>
     </div>
-    <div class="svc reveal" data-delay="160">
-      <span class="svc-n">03</span>
+    <div class="svc reveal" data-delay="180">
+      <span class="svc-n">04</span>
       <h3 class="svc-t">Supports de communication</h3>
-      <p class="svc-d">Print, packaging, réseaux — votre identité déclinée avec cohérence.</p>
-      <div class="svc-tags"><span class="svc-tag">Print & packaging</span><span class="svc-tag">Réseaux sociaux</span><span class="svc-tag">Abonnement</span></div>
+      <p class="svc-d">Print, packaging, réseaux — votre identité déclinée avec cohérence sur tous les formats.</p>
+      <div class="svc-tags"><span class="svc-tag">Projet ponctuel · sur devis</span><span class="svc-tag">Abonnement · dès 400€/mois</span></div>
     </div>
     <div class="svc reveal" data-delay="240">
-      <span class="svc-n">04</span>
+      <span class="svc-n">05</span>
       <h3 class="svc-t">Site web sur-mesure</h3>
       <p class="svc-d">Du logo au site en ligne — votre identité prolongée sur le web avec cohérence.</p>
       <div class="svc-tags"><span class="svc-tag">Sites vitrines & portfolios</span><span class="svc-tag">Cohérence identité</span><span class="svc-tag">Un seul interlocuteur</span></div>
+      <span class="svc-price">À partir de 1 000€</span>
     </div>
   </div>
 </section>
