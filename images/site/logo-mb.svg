@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <rect width="56" height="56" fill="#B5986A"/>
+  <text
+    x="28"
+    y="37"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22"
+    font-weight="400"
+    font-style="italic"
+    fill="#1C1A17"
+    text-anchor="middle"
+    letter-spacing="1"
+  >MB</text>
+</svg>
