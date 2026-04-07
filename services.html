@@ -1,308 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSE1TXJMT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // Consent mode: analytics off by default until user accepts
-  gtag('consent', 'default', {'analytics_storage': 'denied'});
-  gtag('js', new Date());
-  gtag('config', 'G-MSE1TXJMT7');
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services graphisme & direction artistique | Marion Balsaux</title>
-<meta name="description" content="Création visuelle, identité de marque, supports de communication — les services de Marion Balsaux, graphiste freelance en Belgique.">
-<meta name="author" content="Marion Balsaux">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://marionbalsaux.fr/services.html">
-<meta property="og:title" content="Services graphisme & direction artistique — Marion Balsaux">
-<meta property="og:description" content="Création visuelle, identité de marque, supports de communication, site web sur-mesure — graphiste freelance en Belgique.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://marionbalsaux.fr/services.html">
-<meta property="og:locale" content="fr_BE">
-<meta property="og:site_name" content="Marion Balsaux">
-<meta property="og:image" content="https://marionbalsaux.fr/images/site/photo-marion-hero.webp">
-<meta name="twitter:image" content="https://marionbalsaux.fr/images/site/photo-marion-hero.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Services — Marion Balsaux, graphiste freelance">
-<meta name="twitter:description" content="Identité visuelle, packaging, illustration, site web. Chaque mission construite sur-mesure.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Création visuelle, identité de marque, supports de communication — les services de Marion Balsaux, graphiste freelance en Belgique. Chaque projet commence par comprendre votre univers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
+/* ── SERVICES SPECIFIC ── */
+.services-hero { padding: 160px 64px 80px; background: var(--dark); }
+.services-hero-inner { max-width: 800px; }
 
-/* ── HERO ── */
-.sh {
-  padding: 160px 80px 100px;
-  background: var(--dark);
-  position: relative;
-  overflow: hidden;
-}
-.sh-inner { max-width: 800px; position: relative; z-index: 2; }
-.sh-deco {
-  position: absolute; right: -20px; top: 80px;
-  font-family: var(--serif); font-size: 320px; font-weight: 300;
-  color: transparent; -webkit-text-stroke: 1px rgba(181,152,106,.07);
-  line-height: .9; user-select: none; pointer-events: none;
-}
+/* ── INTRO LIGNE ── */
+.services-intro-line { padding: 56px 64px; background: var(--beige-mid); border-bottom: 1px solid rgba(181,152,106,.15); }
+.services-intro-line p { font-family: var(--serif); font-size: clamp(16px, 2vw, 22px); font-weight: 300; font-style: italic; color: var(--text-muted); line-height: 1.7; max-width: 800px; }
 
-/* ── INTRO CITATION ── */
-.s-intro {
-  padding: 72px 80px;
-  background: var(--white);
-  border-bottom: 1px solid rgba(181,152,106,.12);
-}
-.s-intro p {
-  font-family: var(--serif);
-  font-size: clamp(17px,2vw,22px);
-  font-weight: 300; font-style: italic;
-  color: var(--text-muted); line-height: 1.75; max-width: 760px;
-}
+/* ── SERVICES LISTE ── */
+.services-list { padding: 0 64px 100px; background: var(--beige); }
 
-/* ══ GRILLE SERVICES ══════════════════════════════════════ */
-.sv-section {
-  background: var(--beige);
-  padding: 100px 80px;
-}
-.sv-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-}
-.sv-section-title {
-  font-family: var(--serif);
-  font-size: clamp(32px,3.5vw,48px);
-  font-weight: 300; line-height: 1.1;
-}
-.sv-section-title em { font-style: italic; color: var(--gold); }
-.sv-section-sub {
-  font-size: 15px; font-weight: 400;
-  color: var(--text-muted); max-width: 320px; text-align: right;
-  line-height: 1.7;
-}
+.service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; padding: 80px 0; border-bottom: 1px solid rgba(181,152,106,.15); }
+.service-block:first-of-type { padding-top: 80px; }
+.service-block:last-of-type { border-bottom: none; }
+.service-block--reverse .service-block-left { order: 2; }
+.service-block--reverse .service-block-right { order: 1; }
 
-/* Carte featured (Diagnostic) */
-.sv-card-featured {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  background: var(--white);
-  padding: 52px 48px;
-  margin-bottom: 20px;
-  border-left: 3px solid var(--gold);
-  border-bottom: 2px solid transparent;
-  transition: border-color .35s;
-}
-.sv-card-featured:hover { border-bottom-color: var(--gold); }
-.sv-card-featured .sv-card-num {
-  font-family: var(--serif);
-  font-size: 72px; font-style: italic; font-weight: 300;
-  color: rgba(181,152,106,.32); line-height: 1;
-  margin-bottom: 0;
-}
-.sv-card-featured-content { }
-.sv-card-featured-content .sv-card-title {
-  font-size: clamp(22px,2.5vw,32px);
-  margin-bottom: 14px;
-}
-.sv-card-featured-content .sv-card-desc {
-  margin-bottom: 0;
-  max-width: 480px;
-}
-.sv-card-featured-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-end;
-}
-.sv-card-featured-meta .sv-card-tags {
-  text-align: right;
-}
-.sv-card-featured-meta .sv-card-footer {
-  flex-direction: row-reverse;
-  gap: 20px;
-}
-.sv-card-featured-meta .sv-card-price {
-  font-size: 20px;
-}
+.service-block-left {}
+.service-block-num { font-family: var(--serif); font-size: 72px; font-weight: 300; color: rgba(181,152,106,.18); line-height: 1; margin-bottom: 24px; display: block; }
+.service-block-title { font-family: var(--serif); font-size: clamp(30px, 3vw, 42px); font-weight: 300; line-height: 1.1; margin-bottom: 20px; }
+.service-block-title em { font-style: italic; color: var(--gold); }
+.service-block-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--text-muted); margin-bottom: 36px; }
+.service-block-tags { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+.service-block-tag { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+.service-block-tag::before { content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.service-tarif { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--gold); margin-top: 16px; display: block; }
 
-/* Bloc alternative (abonnement) */
-.sv-card-alt {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(181,152,106,.15);
-}
+.service-block-right {}
+.service-visual { width: 100%; aspect-ratio: 4/3; background: var(--dark-mid); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.service-visual::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(181,152,106,.08) 0%, transparent 60%); }
+.service-visual span { font-family: var(--serif); font-size: 16px; font-style: italic; color: rgba(253,252,249,.2); position: relative; z-index: 1; }
 
-@media(max-width:900px) {
-  .sv-card-featured {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 40px 28px;
-  }
-  .sv-card-featured-meta { align-items: flex-start; }
-  .sv-card-featured-meta .sv-card-footer { flex-direction: column; }
-}
+/* ── ACCOMPAGNEMENT BLOC ── */
+.accompagnement-bloc { margin: 0 64px 80px; background: var(--dark); padding: 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.acc-title { font-family: var(--serif); font-size: clamp(28px, 3vw, 40px); font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+.acc-title em { font-style: italic; color: var(--gold-light); }
+.acc-text { font-size: 15px; font-weight: 300; color: rgba(253,252,249,.5); line-height: 1.9; margin-bottom: 36px; }
+.acc-right {}
+.acc-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+.acc-list li { font-size: 14px; font-weight: 300; color: rgba(253,252,249,.55); display: flex; align-items: flex-start; gap: 12px; line-height: 1.7; }
+.acc-list li::before { content: ''; width: 14px; height: 1px; background: var(--gold); flex-shrink: 0; margin-top: 11px; }
 
-/* Grille 2×2 */
-.sv-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+/* ── CITATION ── */
+.services-citation { padding: 80px 64px; background: var(--gold); }
+.services-citation-text { font-family: var(--serif); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: var(--dark); text-align: center; max-width: 720px; margin: 0 auto; line-height: 1.7; }
 
-/* Carte */
-.sv-card {
-  background: var(--white);
-  padding: 52px 48px 48px;
-  border-bottom: 2px solid transparent;
-  transition: border-color .35s, background .3s;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.sv-card:hover { border-color: var(--gold); }
-
-.sv-card-num {
-  font-family: var(--serif);
-  font-size: 52px; font-style: italic; font-weight: 300;
-  color: rgba(181,152,106,.32); line-height: 1;
-  margin-bottom: 28px; display: block; user-select: none;
-}
-.sv-card-title {
-  font-family: var(--serif);
-  font-size: clamp(20px,2.2vw,28px);
-  font-weight: 300; color: var(--dark);
-  line-height: 1.2; margin-bottom: 20px;
-}
-.sv-card-title em { font-style: italic; color: var(--gold); }
-.sv-card-desc {
-  font-size: 15px; font-weight: 300;
-  color: var(--text-muted); line-height: 1.85;
-  margin-bottom: 32px; flex: 1;
-}
-.sv-card-sep {
-  width: 40px; height: 1px;
-  background: rgba(181,152,106,.3);
-  margin-bottom: 28px;
-}
-.sv-card-tags {
-  display: flex; flex-direction: column; gap: 10px;
-  margin-bottom: 40px;
-}
-.sv-card-tag {
-  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--text-light);
-  display: flex; align-items: center; gap: 12px;
-  transition: color .2s;
-}
-.sv-card-tag::before {
-  content: ''; width: 16px; height: 1px;
-  background: var(--gold); opacity: .45; flex-shrink: 0;
-  transition: opacity .2s, width .2s;
-}
-.sv-card:hover .sv-card-tag { color: var(--dark); }
-.sv-card:hover .sv-card-tag::before { opacity: .8; width: 22px; }
-.sv-card-footer {
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 16px;
-  flex-wrap: wrap;
-}
-.sv-card-price {
-  font-family: var(--serif);
-  font-size: 13px; font-style: italic;
-  color: var(--gold); opacity: .75;
-}
-
-/* ══ ACCOMPAGNEMENT ═══════════════════════════════════════ */
-.sv-acc {
-  background: var(--dark);
-  padding: 100px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  border-top: none;
-}
-.sv-acc-label {
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 20px; display: block;
-}
-.sv-acc-title {
-  font-family: var(--serif);
-  font-size: clamp(26px,3vw,40px);
-  font-weight: 300; color: var(--white);
-  line-height: 1.1; margin-bottom: 20px;
-}
-.sv-acc-title em { font-style: italic; color: var(--gold-light); }
-.sv-acc-desc {
-  font-size: 15px; font-weight: 400;
-  color: rgba(253,252,249,.62); line-height: 1.9; margin-bottom: 36px;
-}
-.sv-acc-list {
-  list-style: none;
-  display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px;
-}
-.sv-acc-list li {
-  font-size: 15px; font-weight: 400; color: rgba(253,252,249,.62);
-  display: flex; align-items: center; gap: 12px;
-}
-.sv-acc-list li::before {
-  content: ''; width: 16px; height: 1px;
-  background: var(--gold); opacity: .6; flex-shrink: 0;
-}
-.sv-acc-note {
-  font-size: 13px; font-weight: 400; font-style: italic;
-  color: rgba(253,252,249,.45); line-height: 1.7;
-  border-left: 2px solid rgba(181,152,106,.25);
-  padding-left: 16px;
-}
-
-/* ══ CITATION ══════════════════════════════════════════════ */
-.sv-cite {
-  background: var(--gold);
-  padding: 88px 80px;
-}
-.sv-cite p {
-  font-family: var(--serif);
-  font-size: clamp(18px,2.5vw,26px);
-  font-style: italic; font-weight: 300;
-  color: var(--dark); text-align: center;
-  max-width: 720px; margin: 0 auto; line-height: 1.75;
-}
-
-/* ══ RESPONSIVE ════════════════════════════════════════════ */
-@media(max-width:900px){
-  .sh { padding: 120px 24px 60px; }
-  .sh-deco { display: none; }
-  .s-intro { padding: 48px 24px; }
-  .sv-section { padding: 72px 24px; }
-  .sv-section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .sv-section-sub { text-align: left; }
-  .sv-cards { grid-template-columns: 1fr; }
-  .sv-acc { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
-  .sv-cite { padding: 60px 24px; }
-}
-
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
+@media (max-width: 900px) {
+  .services-hero { padding: 120px 24px 60px; }
+  .services-intro-line { padding: 40px 24px; }
+  .services-list { padding: 0 24px 72px; }
+  .service-block { grid-template-columns: 1fr; gap: 32px; }
+  .service-block--reverse .service-block-left { order: 1; }
+  .service-block--reverse .service-block-right { order: 2; }
+  .accompagnement-bloc { margin: 0 24px 60px; padding: 48px 32px; grid-template-columns: 1fr; gap: 32px; }
+  .services-citation { padding: 60px 24px; }
 }
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;">Aller au contenu principal</a>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="follower"></div>
 
-<header>
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-mb"><span>Marion Balsaux</span><span>Direction Artistique</span></span>
-  </a>
+  <a href="index.html" class="nav-logo">Marion Balsaux</a>
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="approche.html">Approche</a></li>
@@ -311,204 +83,142 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Parlons-en</a>
-
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-<!-- Menu mobile overlay -->
-<div class="nav-mobile-overlay" id="nav-mobile-overlay" role="dialog" aria-modal="true">
-  <ul class="nav-mobile-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="approche.html">Approche</a></li>
-    <li><a href="projets.html">Projets</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-mobile-cta">Parlons de votre projet</a>
-  <span class="nav-mobile-deco">Marion Balsaux · Direction Artistique</span>
-</div>
-</header>
 
-<main id="main-content">
 <!-- HERO -->
-<section class="sh">
-  <div class="sh-inner">
-    <p style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease .2s forwards">Ce que je propose</p>
-    <h1 style="font-family:var(--serif);font-size:clamp(56px,8vw,110px);font-weight:300;color:var(--white);line-height:.95;letter-spacing:-.02em;white-space:nowrap;opacity:0;animation:fadeUp .8s ease .35s forwards">Ser<em style="font-style:italic;color:var(--gold-light)">vices.</em></h1>
-    <p style="font-size:16px;font-weight:400;color:rgba(253,252,249,.62);margin-top:28px;opacity:0;animation:fadeUp .8s ease .5s forwards">Illustration · Identité visuelle · Print · Réseaux sociaux · Direction artistique · Site web sur-mesure</p>
+<section class="services-hero">
+  <div class="services-hero-inner">
+    <p class="hero-eyebrow" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease .2s forwards;">Ce que je propose</p>
+    <h1 class="page-hero-title" style="opacity:0;animation:fadeUp .8s ease .35s forwards;">Ser<em>vices.</em></h1>
+    <p class="page-hero-sub" style="opacity:0;animation:fadeUp .8s ease .5s forwards;">Illustration · Identité visuelle · Print · Réseaux sociaux · Direction artistique · Site web sur-mesure</p>
   </div>
-  <div class="sh-deco">S</div>
 </section>
 
 <!-- INTRO -->
-<div class="s-intro reveal">
+<div class="services-intro-line reveal">
   <p>Je ne crée pas pour que ce soit beau. Je crée pour que ça fonctionne — pour que les bonnes personnes vous reconnaissent, vous comprennent et aient envie de travailler avec vous.</p>
 </div>
 
-<!-- SERVICES GRID -->
-<section class="sv-section">
-  <div class="sv-section-header reveal">
-    <h2 class="sv-section-title">Ce que je <em>fais</em></h2>
-    <p class="sv-section-sub">Du diagnostic à l'accompagnement continu — chaque étape est pensée pour que votre image serve votre mission.</p>
-  </div>
+<!-- SERVICES -->
+<div class="services-list">
 
-  <!-- CARTE FEATURED : Diagnostic -->
-  <div class="sv-card-featured reveal" data-delay="0">
-    <span class="sv-card-num">01</span>
-    <div class="sv-card-featured-content">
-      <h2 class="sv-card-title">Diagnostic stratégique <em>visuel</em></h2>
-      <p class="sv-card-desc">Votre image reflète-t-elle vraiment votre mission ? Un entretien stratégique suivi d'une analyse complète de votre communication visuelle — pour identifier ce qui fonctionne, ce qui manque, et les priorités à traiter. Vous repartez avec une feuille de route actionnable.</p>
+  <div class="service-block reveal">
+    <div class="service-block-left">
+      <span class="service-block-num">01</span>
+      <h2 class="service-block-title">Création visuelle & <em>direction artistique</em></h2>
+      <p class="service-block-text">Illustrations, affiches, visuels réseaux, motion — je crée des contenus visuels qui ont un univers propre et qui donnent une vraie présence à votre projet. Pas du design générique : quelque chose qui vous ressemble.</p>
+      <div class="service-block-tags">
+        <span class="service-block-tag">Direction artistique</span>
+        <span class="service-block-tag">Illustration & contenus visuels</span>
+        <span class="service-block-tag">Cohérence sur tous les supports</span>
+      </div>
+      <a href="contact.html" class="btn btn--light">Prendre contact</a>
+      <span class="service-tarif">Devis sur mesure selon le périmètre</span>
     </div>
-    <div class="sv-card-featured-meta">
-      <div class="sv-card-tags">
-        <span class="sv-card-tag">Entretien stratégique</span>
-        <span class="sv-card-tag">Analyse identité visuelle</span>
-        <span class="sv-card-tag">Rapport & feuille de route</span>
-      </div>
-      <div class="sv-card-footer">
-        <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">À partir de 350€</span>
-      </div>
+    <div class="service-block-right">
+      <div class="service-visual"><span>Création visuelle</span></div>
     </div>
   </div>
 
-  <div class="sv-cards">
-
-    <!-- 02 -->
-    <div class="sv-card reveal" data-delay="0">
-      <span class="sv-card-num">02</span>
-      <h2 class="sv-card-title">Création visuelle &<br><em>direction artistique</em></h2>
-      <p class="sv-card-desc">Illustrations, affiches, visuels réseaux — je crée des contenus visuels qui ont un univers propre. Pas du design générique : quelque chose qui vous ressemble vraiment.</p>
-      <div class="sv-card-sep"></div>
-      <div class="sv-card-tags">
-        <span class="sv-card-tag">Direction artistique</span>
-        <span class="sv-card-tag">Illustration & contenus visuels</span>
-        <span class="sv-card-tag">Cohérence multi-supports</span>
+  <div class="service-block service-block--reverse reveal">
+    <div class="service-block-left">
+      <span class="service-block-num">02</span>
+      <h2 class="service-block-title">Identité & <em>image de marque</em></h2>
+      <p class="service-block-text">Logo, palette, typographies, charte graphique — je construis une identité visuelle qui reflète qui vous êtes vraiment, et qui reste cohérente sur tous vos supports. On commence toujours par la stratégie, pas par le logo.</p>
+      <div class="service-block-tags">
+        <span class="service-block-tag">Logo & identité visuelle</span>
+        <span class="service-block-tag">Palette & typographies</span>
+        <span class="service-block-tag">Charte graphique complète</span>
       </div>
-      <div class="sv-card-footer">
-        <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">Sur devis</span>
-      </div>
+      <a href="contact.html" class="btn btn--light">Prendre contact</a>
+      <span class="service-tarif">À partir de 900€ — devis personnalisé</span>
     </div>
-
-    <!-- 03 -->
-    <div class="sv-card reveal" data-delay="80">
-      <span class="sv-card-num">03</span>
-      <h2 class="sv-card-title">Identité &<br><em>image de marque</em></h2>
-      <p class="sv-card-desc">Logo, palette, typographies, charte graphique — je construis une identité visuelle qui reflète qui vous êtes vraiment. On commence toujours par la stratégie, pas par le logo.</p>
-      <div class="sv-card-sep"></div>
-      <div class="sv-card-tags">
-        <span class="sv-card-tag">Logo & identité visuelle</span>
-        <span class="sv-card-tag">Palette & typographies</span>
-        <span class="sv-card-tag">Charte graphique complète</span>
-      </div>
-      <div class="sv-card-footer">
-        <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">À partir de 800€</span>
-      </div>
+    <div class="service-block-right">
+      <div class="service-visual"><span>Identité de marque</span></div>
     </div>
-
-    <!-- 04 -->
-    <div class="sv-card reveal" data-delay="120">
-      <span class="sv-card-num">04</span>
-      <h2 class="sv-card-title">Supports de<br><em>communication</em></h2>
-      <p class="sv-card-desc">Affiches, packaging, brochures, templates réseaux — je décline votre identité sur tous les supports avec une cohérence visuelle impeccable d'un format à l'autre.</p>
-      <div class="sv-card-sep"></div>
-      <div class="sv-card-tags">
-        <span class="sv-card-tag">Réseaux sociaux</span>
-        <span class="sv-card-tag">Print & packaging</span>
-      </div>
-      <div class="sv-card-footer">
-        <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">Projet ponctuel · sur devis</span>
-      </div>
-      <div class="sv-card-alt">
-        <span class="sv-card-tag">Abonnement mensuel</span>
-        <span class="sv-card-desc" style="font-size:14px;margin-top:8px;">Suivi communication, création de templates personnalisés, direction artistique continue.</span>
-        <span class="sv-card-price" style="margin-top:8px;">À partir de 400€/mois</span>
-      </div>
-    </div>
-
-    <!-- 05 -->
-    <div class="sv-card reveal" data-delay="200">
-      <span class="sv-card-num">05</span>
-      <h2 class="sv-card-title">Site web<br><em>sur-mesure</em></h2>
-      <p class="sv-card-desc">Je conçois des sites web qui prolongent naturellement votre identité visuelle. Sites vitrines, portfolios, landing pages — pensés pour mettre en valeur votre activité avec cohérence. Pour les projets plus complexes, je collabore avec un développeur partenaire.</p>
-      <div class="sv-card-sep"></div>
-      <div class="sv-card-tags">
-        <span class="sv-card-tag">Sites vitrines & portfolios</span>
-        <span class="sv-card-tag">Cohérence identité & site</span>
-        <span class="sv-card-tag">Un seul interlocuteur</span>
-      </div>
-      <div class="sv-card-footer">
-        <a href="contact.html" class="btn btn--light">Prendre contact</a>
-        <span class="sv-card-price">À partir de 1 000€</span>
-      </div>
-    </div>
-
   </div>
-</section>
+
+  <div class="service-block reveal">
+    <div class="service-block-left">
+      <span class="service-block-num">03</span>
+      <h2 class="service-block-title">Supports de <em>communication</em></h2>
+      <p class="service-block-text">Affiches, flyers, packaging, brochures, templates réseaux sociaux — je décline votre identité sur tous les supports dont vous avez besoin, en gardant une cohérence visuelle impeccable d'un format à l'autre.</p>
+      <div class="service-block-tags">
+        <span class="service-block-tag">Réseaux sociaux</span>
+        <span class="service-block-tag">Print & packaging</span>
+        <span class="service-block-tag">Abonnement com mensuel</span>
+      </div>
+      <a href="contact.html" class="btn btn--light">Prendre contact</a>
+      <span class="service-tarif">À partir de 600€ — abonnement dès 400€/mois</span>
+    </div>
+    <div class="service-block-right">
+      <div class="service-visual"><span>Communication</span></div>
+    </div>
+  </div>
+
+  <div class="service-block service-block--reverse reveal">
+    <div class="service-block-left">
+      <span class="service-block-num">04</span>
+      <h2 class="service-block-title">Site web <em>sur-mesure</em></h2>
+      <p class="service-block-text">En partenariat avec un développeur, je propose des sites web personnalisés, cohérents avec votre identité visuelle. Un seul interlocuteur, du logo au site en ligne. Pas un template — quelque chose qui vous appartient vraiment.</p>
+      <div class="service-block-tags">
+        <span class="service-block-tag">Site web personnalisé</span>
+        <span class="service-block-tag">Cohérence identité visuelle & site</span>
+        <span class="service-block-tag">Un seul interlocuteur</span>
+      </div>
+      <a href="contact.html" class="btn btn--light">Prendre contact</a>
+      <span class="service-tarif">À partir de 800€ — devis personnalisé</span>
+    </div>
+    <div class="service-block-right">
+      <div class="service-visual"><span>Site web</span></div>
+    </div>
+  </div>
+
+</div>
 
 <!-- ACCOMPAGNEMENT -->
-<div class="sv-acc reveal">
+<div class="accompagnement-bloc reveal">
   <div>
-    <span class="sv-acc-label">Bientôt disponible</span>
-    <h3 class="sv-acc-title">Accompagnement <em>stratégique</em></h3>
-    <p class="sv-acc-desc">Vous avez une idée, un projet, une activité — mais la direction manque de clarté. Je vous aide à structurer votre positionnement et construire une communication cohérente.</p>
-    <a href="contact.html" class="btn btn--outline-w">Me contacter</a>
+    <span class="section-label section-label--light">Bientôt</span>
+    <h3 class="acc-title">Accompagnement <em>stratégique</em></h3>
+    <p class="acc-text">Vous avez une idée, un projet, une activité — mais la direction manque de clarté. Je vous aide à structurer votre positionnement et à construire une communication cohérente avec qui vous êtes vraiment.</p>
+    <a href="contact.html" class="btn btn--outline-white">Me contacter</a>
   </div>
-  <div>
-    <ul class="sv-acc-list">
+  <div class="acc-right">
+    <ul class="acc-list">
       <li>Clarification du projet et du positionnement</li>
       <li>Structuration de votre communication</li>
       <li>Accompagnement dans la durée</li>
     </ul>
-    <p class="sv-acc-note">Je me forme actuellement au coaching professionnel (ICF) pour accompagner les créatifs et freelances dans leurs transitions. Liste d'attente ouverte — contactez-moi.</p>
+    <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(253,252,249,.35);line-height:1.7;">Je me forme actuellement au coaching professionnel (ICF) pour accompagner les créatifs et freelances dans leurs transitions. Liste d'attente ouverte.</p>
   </div>
 </div>
 
 <!-- CITATION -->
-<div class="sv-cite reveal">
-  <p>« Je ne crée pas pour que ce soit beau. Je crée pour que ça fonctionne — pour que les bonnes personnes vous reconnaissent, vous comprennent et aient envie de travailler avec vous. »</p>
+<div class="services-citation reveal">
+  <p class="services-citation-text">« Je ne crée pas pour que ce soit beau. Je crée pour que ça fonctionne — pour que les bonnes personnes vous reconnaissent, vous comprennent et aient envie de travailler avec vous. »</p>
 </div>
 
 <!-- CTA -->
 <section class="cta-section">
-  <img src="images/site/logo_initiales.webp" alt="" class="cta-mb-watermark" aria-hidden="true">
-  <div class="cta-mb-seal reveal">
-    <span class="cta-mb-letters">MB</span>
-  </div>
-  <span class="label" style="display:block;text-align:center;margin-bottom:20px;">Un projet en tête ?</span>
+  <span class="section-label">Un projet en tête ?</span>
   <h2 class="cta-title reveal">Parlons de<br><em>votre projet.</em></h2>
   <p class="cta-text reveal">Premier échange sans engagement — je réponds sous 48h.</p>
   <a href="contact.html" class="btn btn--dark reveal">Prendre contact</a>
 </section>
-</main>
 
 <footer>
-  <a href="index.html" class="footer-logo-wrap">
-    <img src="images/site/logo_horizontal-white.webp" alt="Marion Balsaux" class="footer-logo-img">
-  </a>
+  <a href="index.html" class="footer-logo">Marion Balsaux©</a>
   <ul class="footer-nav">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="approche.html">Approche</a></li>
     <li><a href="projets.html">Projets</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
   <span class="footer-copy">© 2026 Marion Balsaux</span>
 </footer>
 
 <script src="main.js"></script>
-
-<!-- ══ Cookie Consent Banner ══ -->
-<div id="cookie-banner" style="display:none;opacity:0;transform:translateY(calc(100% + 20px));transition:transform 0.4s ease,opacity 0.4s ease;position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(calc(100% + 20px));width:min(92vw,640px);background:#1a1a1a;color:#f0f0f0;border-radius:12px;padding:20px 24px;z-index:9999;box-shadow:0 8px 40px rgba(0,0,0,0.35);font-family:'DM Sans',sans-serif;font-size:0.875rem;gap:16px;flex-direction:column;align-items:flex-start;" role="alertdialog" aria-label="Consentement aux cookies">
-  <p style="margin:0;line-height:1.6;color:#ddd;">Ce site utilise <strong style="color:#fff;">Google Analytics</strong> pour mesurer son audience. Ces cookies sont optionnels — votre choix est mémorisé pendant 13 mois. <a href="mentions-legales.html" style="color:#ccc;text-underline-offset:3px;">En savoir plus</a></p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <button id="cookie-accept" style="background:#fff;color:#1a1a1a;border:none;border-radius:6px;padding:9px 20px;font-size:0.875rem;font-weight:500;cursor:pointer;font-family:inherit;letter-spacing:0.02em;">Accepter</button>
-    <button id="cookie-reject" style="background:transparent;color:#aaa;border:1px solid #444;border-radius:6px;padding:9px 20px;font-size:0.875rem;cursor:pointer;font-family:inherit;letter-spacing:0.02em;">Refuser</button>
-  </div>
-</div>
-<script src="cookie-consent.js"></script>
 </body>
 </html>

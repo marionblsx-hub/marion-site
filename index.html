@@ -1,741 +1,140 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSE1TXJMT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // Consent mode: analytics off by default until user accepts
-  gtag('consent', 'default', {'analytics_storage': 'denied'});
-  gtag('js', new Date());
-  gtag('config', 'G-MSE1TXJMT7');
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Graphiste Belgique — Marion Balsaux | Identité visuelle & Direction artistique</title>
-<meta name="description" content="Marion Balsaux, graphiste & directrice artistique en Belgique — identité visuelle, packaging, illustration et accompagnement créatif pour entrepreneurs, associations et porteurs de projets.">
-<meta name="author" content="Marion Balsaux">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://marionbalsaux.fr/">
-<meta property="og:title" content="Graphiste Belgique — Marion Balsaux | Identité visuelle & Direction artistique">
-<meta property="og:description" content="Graphiste freelance en Belgique, je crée des identités visuelles stratégiques et des sites web sur-mesure pour entrepreneurs, associations et structures culturelles.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://marionbalsaux.fr/">
-<meta property="og:locale" content="fr_BE">
-<meta property="og:site_name" content="Marion Balsaux">
-<meta property="og:image" content="https://marionbalsaux.fr/images/site/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://marionbalsaux.fr/images/site/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Marion Balsaux — Graphiste & Directrice Artistique en Belgique">
-<meta name="twitter:description" content="Identité visuelle, packaging, illustration, site web sur-mesure. Une approche stratégique avant esthétique.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Graphiste en Brabant Wallon et Belgique — Marion Balsaux crée des identités visuelles et accompagne les projets créatifs avec une approche stratégique et humaine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* ══════════════════════════════════════════
-   HERO
-══════════════════════════════════════════ */
-.hero {
-  height: 84vh;
-  min-height: 500px;
-  max-height: 820px;
-  background: var(--dark);
-  display: grid;
-  grid-template-columns: 55% 45%;
-  position: relative;
-  overflow: visible;
-  align-items: stretch;
-}
-/* Canvas fumée */
-#hero-smoke {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 1;
-}
+/* ── HOME SPECIFIC ── */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero-left { background: var(--dark); padding: 160px 64px 80px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+.hero-left::before { content: ''; position: absolute; top: -80px; left: -80px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(181,152,106,.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+.hero-eyebrow { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; opacity: 0; animation: fadeUp .8s ease .2s forwards; }
+.hero-title { font-family: var(--serif); font-size: clamp(52px, 6vw, 84px); font-weight: 300; line-height: 1.0; color: var(--white); margin-bottom: 28px; opacity: 0; animation: fadeUp .8s ease .35s forwards; }
+.hero-title em { font-style: italic; color: var(--gold-light); display: block; }
+.hero-desc { font-size: 15px; font-weight: 300; line-height: 1.85; color: rgba(253,252,249,.55); max-width: 380px; margin-bottom: 48px; opacity: 0; animation: fadeUp .8s ease .5s forwards; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s ease .65s forwards; }
+.hero-right { background: var(--beige-dark); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 56px; }
+.hero-right-tags { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; margin-bottom: 56px; opacity: 0; animation: fadeUp .8s ease .9s forwards; }
+.hero-tag { font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--text-muted); }
+.hero-watermark { position: absolute; bottom: -20px; right: -10px; font-family: var(--serif); font-size: 160px; font-weight: 300; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(181,152,106,.15); pointer-events: none; user-select: none; }
+.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--text-light); opacity: 0; animation: fadeIn 1s ease 1.3s forwards; z-index: 2; }
+.hero-scroll-line { width: 1px; height: 36px; background: var(--gold); animation: scrollLine 2.2s ease-in-out infinite; }
 
-/* Filigrane décoratif */
-.hero-bg-num {
-  position: absolute;
-  left: 22%;
-  top: 40px;
-  font-family: var(--serif);
-  font-size: 420px;
-  font-weight: 300;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(181,152,106,.04);
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-}
-
-/* Colonne gauche */
-.hero-left {
-  padding: 80px 88px 40px 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-/* Accent vertical doré — signature éditoriale */
-.hero-left::before {
-  content: '';
-  position: absolute;
-  left: 40px;
-  top: 28%;
-  bottom: 22%;
-  width: 1px;
-  background: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(181,152,106,.35) 20%,
-    rgba(181,152,106,.35) 80%,
-    transparent 100%
-  );
-  z-index: 1;
-}
-
-.hero-eyebrow {
-  font-size: 10px;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeUp .8s ease .2s forwards;
-}
-
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(72px, 9vw, 120px);
-  font-weight: 300;
-  line-height: .88;
-  color: var(--white);
-  margin-bottom: 20px;
-  letter-spacing: -.028em;
-  opacity: 0;
-  animation: fadeUp .8s ease .35s forwards;
-}
-.hero-title em {
-  font-style: italic;
-  color: var(--gold-light);
-  display: block;
-}
-
-.hero-desc {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(253,252,249,.62);
-  max-width: 380px;
-  margin-bottom: 0;
-  opacity: 0;
-  animation: fadeUp .8s ease .5s forwards;
-}
-
-/* Séparateur + CTA */
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp .8s ease .65s forwards;
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(253,252,249,.09);
-}
-
-/* Pied de hero — micro-détails éditoriaux */
-.hero-meta {
-  display: flex;
-  gap: 36px;
-  margin-top: 18px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease 1s forwards;
-}
-.hero-meta-item {
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(253,252,249,.35);
-}
-
-/* Colonne droite — portrait éditorial DA */
-.hero-right {
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  /* Découpe diagonale — signature éditoriale */
-  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-/* Traitement photo : N&B + contraste DA */
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  filter: grayscale(100%) contrast(1.3) brightness(.82);
-  opacity: .55;
-}
-
-/* Gradient : fondu gauche + bas + touche dorée */
-.hero-photo-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, var(--dark) 0%, rgba(28,26,23,.6) 28%, transparent 58%),
-    linear-gradient(to top, var(--dark) 0%, transparent 16%);
-  z-index: 1;
-}
-
-/* Voile duotone or — couche finale éditoriale */
-.hero-right::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at 70% 40%,
-    rgba(181,152,106,.12) 0%,
-    transparent 65%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 9px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(253,252,249,.3);
-  opacity: 0;
-  animation: fadeIn 1s ease 1.4s forwards;
-  z-index: 3;
-}
-.hero-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, var(--gold));
-  animation: scrollLine 2.4s ease-in-out infinite;
-}
-
-/* ══════════════════════════════════════════
-   ABOUT STRIP
-══════════════════════════════════════════ */
-.about-strip {
-  padding: 120px 80px;
-  display: grid;
-  /* Photo discrète à gauche — placeholder en attente d'une 2e photo de Marion */
-  grid-template-columns: 220px 1fr;
-  gap: 80px;
-  align-items: center;
-  background: var(--beige-dark);
-}
-.about-photo-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-/* Placeholder en attendant la photo About distincte */
-.about-photo-placeholder {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 3/4;
-  border: 1px solid rgba(181,152,106,.18);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  background: rgba(181,152,106,.03);
-}
-.about-placeholder-initials {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(181,152,106,.22);
-  letter-spacing: .06em;
-  line-height: 1;
-}
-.about-placeholder-rule {
-  width: 28px;
-  height: 1px;
-  background: rgba(181,152,106,.18);
-}
-.about-photo {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-  filter: saturate(.65) contrast(1.05);
-}
-.about-photo-deco {
-  position: absolute;
-  bottom: -16px;
-  right: -16px;
-  width: 56px;
-  height: 56px;
-  border: 1px solid rgba(181,152,106,.22);
-}
-.about-title {
-  font-family: var(--serif);
-  font-size: clamp(34px, 3.5vw, 52px);
-  font-weight: 300;
-  line-height: 1.1;
-  margin-bottom: 32px;
-}
-.about-title em { font-style: italic; color: var(--gold); }
-.about-text {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.95;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-.about-quote {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-style: italic;
-  color: var(--text-muted);
-  border-left: 2px solid var(--gold);
-  padding-left: 22px;
-  margin: 36px 0;
-  line-height: 1.75;
-}
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(181,152,106,.18);
-  margin-top: 36px;
-}
-.stat-n {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--gold);
-  display: block;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.stat-l {
-  font-size: 10px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ══════════════════════════════════════════
-   INTRO — LA DIFFÉRENCE
-══════════════════════════════════════════ */
-.intro {
-  padding: 128px 80px;
-  background: var(--white);
-}
-.intro-inner { max-width: 1000px; }
-.intro-title {
-  font-family: var(--serif);
-  font-size: clamp(40px, 4.5vw, 66px);
-  font-weight: 300;
-  line-height: 1.08;
-  margin-bottom: 72px;
-}
+/* ── INTRO ── */
+.intro { padding: 100px 64px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 96px; align-items: center; background: var(--white); }
+.intro-title { font-family: var(--serif); font-size: clamp(38px, 4vw, 58px); font-weight: 300; line-height: 1.1; }
 .intro-title em { font-style: italic; color: var(--gold); }
-.pillars { display: flex; flex-direction: column; }
-.pillar {
-  padding: 28px 0 28px 16px;
-  border-bottom: 1px solid rgba(181,152,106,.13);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-  transition: padding-left .35s ease, background .35s ease;
-  cursor: default;
-}
-.pillar:first-child { border-top: 1px solid rgba(181,152,106,.13); }
-.pillar:hover { padding-left: 28px; background: rgba(181,152,106,.03); }
-.pillar-name {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-}
-.pillar-desc {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--text-muted);
-  line-height: 1.78;
-}
+.intro-right { }
+.intro-text { font-size: 16px; font-weight: 300; line-height: 1.9; color: var(--text-muted); margin-bottom: 40px; }
+.intro-pillars { display: flex; flex-direction: column; gap: 0; }
+.pillar { padding: 20px 0; border-bottom: 1px solid rgba(181,152,106,.2); display: flex; justify-content: space-between; align-items: center; }
+.pillar-name { font-family: var(--serif); font-size: 18px; font-weight: 400; }
+.pillar-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; max-width: 260px; text-align: right; }
 
-/* ══════════════════════════════════════════
-   SERVICES CARDS (dark)
-══════════════════════════════════════════ */
-.svcs-dark { background: var(--dark); padding: 120px 80px; }
-.svcs-dark-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 72px;
-}
-.svcs-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.1;
-}
-.svcs-title em { font-style: italic; color: var(--gold-light); }
-.svcs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  background: transparent;
-}
-.svc {
-  background: var(--dark-mid);
-  padding: 48px 32px;
-  display: flex;
-  flex-direction: column;
-  transition: background .35s;
-  cursor: none;
-}
-.svc:hover { background: rgba(50,47,42,1); }
-.svc-n {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(181,152,106,.35);
-  line-height: 1;
-  margin-bottom: 24px;
-  display: block;
-  user-select: none;
-}
-.svc-t {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 18px;
-}
-.svc-d {
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(253,252,249,.55);
-  line-height: 1.85;
-  margin-bottom: 32px;
-}
-.svc-tags { display: flex; flex-direction: column; gap: 10px; }
-.svc-tag {
-  font-size: 10px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.svc-tag::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: var(--gold);
-  flex-shrink: 0;
-  opacity: .5;
-}
-
-/* Grille 5 colonnes */
-.svcs-grid--5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-.svc-price {
-  font-family: var(--serif);
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--gold-light);
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(181,152,106,.2);
-}
-@media(max-width:1200px) {
-  .svcs-grid--5 { grid-template-columns: repeat(3, 1fr); }
-}
-@media(max-width:900px) {
-  .svcs-grid--5 { grid-template-columns: 1fr; }
-}
-
-/* ══════════════════════════════════════════
-   MÉTHODE
-══════════════════════════════════════════ */
-.meth { padding: 120px 80px; background: var(--beige-mid); }
-.meth-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 300;
-  line-height: 1.1;
-  text-align: center;
-  margin-bottom: 88px;
-}
-.meth-title em { font-style: italic; color: var(--gold); }
-.meth-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
-  position: relative;
-}
-.meth-steps::before { display: none; }
-.meth-step { text-align: left; }
-.meth-num {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(181,152,106,.40);
-  line-height: 1;
-  margin-bottom: 24px;
-  display: block;
-  user-select: none;
-}
-.meth-nt {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 14px;
-}
-.meth-nd {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--text-muted);
-}
-
-/* ══════════════════════════════════════════
-   PROJETS — APERÇU HOME (layout éditorial)
-   Inspiration : book de DA / galerie de studio
-   Titres sous les images, pas d'overlay générique
-══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   SECTION PROJETS HOME — grille 4 colonnes
-═══════════════════════════════════════════ */
-.projets-home { padding: 120px 80px; background: var(--beige); }
-.projets-home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-}
-.projets-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 300;
-  line-height: 1.1;
-}
+/* ── PROJETS APERÇU ── */
+.projets-section { padding: 100px 64px; background: var(--beige); }
+.projets-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
+.projets-title { font-family: var(--serif); font-size: clamp(38px, 4vw, 56px); font-weight: 300; line-height: 1.1; }
 .projets-title em { font-style: italic; color: var(--gold); }
+.projets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.projet-card { position: relative; overflow: hidden; background: var(--dark); aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; text-decoration: none; cursor: none; }
+.projet-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,26,23,.85) 0%, transparent 60%); z-index: 1; transition: opacity .4s; }
+.projet-card:hover::before { opacity: .95; }
+.projet-img-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.projet-img-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.projet-card:hover .projet-img-placeholder img { transform: scale(1.04); }
+.projet-card-content { position: relative; z-index: 2; }
+.projet-cat { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+.projet-name { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--white); line-height: 1.2; }
+.projet-placeholder-bg { background: var(--dark-mid); }
+.projet-placeholder-label { font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(253,252,249,.2); }
 
-/* Grille 4 colonnes */
-.proj-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.proj-thumb {
-  display: block;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  background: var(--dark);
-  cursor: none;
-}
-/* Image — ratio portrait, toujours rempli */
-.proj-thumb-img {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  display: block;
-}
-.proj-thumb-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .9s cubic-bezier(.25,.46,.45,.94), opacity .4s;
-  filter: brightness(.92);
-}
-.proj-thumb:hover .proj-thumb-img img {
-  transform: scale(1.06);
-  opacity: .75;
-  filter: brightness(.7);
-}
-/* Numéro discret en haut */
-.proj-thumb-num {
-  position: absolute; top: 14px; left: 16px;
-  font-family: var(--serif); font-size: 10px; font-style: italic;
-  color: rgba(253,252,249,.4);
-  z-index: 2; pointer-events: none;
-}
-/* Overlay — révélé au hover */
-.proj-thumb-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(20,18,16,.90) 45%, rgba(20,18,16,.1) 85%);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 28px 22px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .35s ease, transform .35s ease;
-}
-.proj-thumb:hover .proj-thumb-overlay { opacity: 1; transform: translateY(0); }
-.proj-thumb-cat {
-  font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--gold-light); margin-bottom: 10px; display: block;
-}
-.proj-thumb-name {
-  font-family: var(--serif); font-size: 18px; font-weight: 400;
-  font-style: italic; color: var(--white); display: block; line-height: 1.2;
-}
-.proj-thumb-arrow {
-  display: inline-block; font-size: 13px; color: var(--gold);
-  margin-top: 10px; transform: translateX(-8px);
-  transition: transform .3s ease; opacity: 0;
-  transition: transform .35s ease, opacity .35s ease;
-}
-.proj-thumb:hover .proj-thumb-arrow { transform: translateX(0); opacity: 1; }
+/* ── SERVICES APERÇU ── */
+.services-section { background: var(--dark); padding: 100px 64px; }
+.services-header { margin-bottom: 64px; }
+.services-title { font-family: var(--serif); font-size: clamp(38px, 4vw, 56px); font-weight: 300; color: var(--white); line-height: 1.1; }
+.services-title em { font-style: italic; color: var(--gold-light); }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(181,152,106,.1); }
+.service-card { background: var(--dark-mid); padding: 40px 28px; transition: background .3s; }
+.service-card:hover { background: var(--dark-light); }
+.service-num { font-family: var(--serif); font-size: 12px; font-style: italic; color: var(--gold); margin-bottom: 28px; display: block; }
+.service-title { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--white); line-height: 1.25; margin-bottom: 16px; }
+.service-text { font-size: 13px; font-weight: 300; color: rgba(253,252,249,.45); line-height: 1.8; margin-bottom: 28px; }
+.service-tags { display: flex; flex-direction: column; gap: 8px; }
+.service-tag { font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 8px; }
+.service-tag::before { content: ''; width: 14px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
-.ph-footer { margin-top: 48px; text-align: center; }
+/* ── MÉTHODE ── */
+.methode-section { padding: 100px 64px; background: var(--beige-mid); }
+.methode-header { text-align: center; margin-bottom: 80px; }
+.methode-title { font-family: var(--serif); font-size: clamp(38px, 4vw, 56px); font-weight: 300; line-height: 1.1; }
+.methode-title em { font-style: italic; color: var(--gold); }
+.methode-sub { font-size: 15px; font-weight: 300; color: var(--text-muted); max-width: 440px; margin: 20px auto 0; line-height: 1.85; }
+.methode-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
+.methode-steps::before { content: ''; position: absolute; top: 27px; left: 12%; right: 12%; height: 1px; background: linear-gradient(to right, transparent, var(--gold-pale), transparent); }
+.step { text-align: center; }
+.step-num { width: 54px; height: 54px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-family: var(--serif); font-size: 19px; font-style: italic; color: var(--gold); background: var(--beige-mid); position: relative; z-index: 1; }
+.step-title { font-family: var(--serif); font-size: 21px; font-weight: 400; margin-bottom: 14px; }
+.step-text { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--text-muted); }
 
-/* ══════════════════════════════════════════
-   TÉMOIGNAGES
-══════════════════════════════════════════ */
-.testi { background: var(--dark); padding: 120px 80px; }
-.testi-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 300;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 72px;
-}
+/* ── ABOUT ── */
+.about-section { padding: 100px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-visual { position: relative; }
+.about-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+.about-img-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--dark); display: flex; align-items: center; justify-content: center; }
+.about-img-placeholder span { font-family: var(--serif); font-size: 16px; font-style: italic; color: rgba(253,252,249,.25); }
+.about-deco { position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; border: 1px solid rgba(181,152,106,.35); }
+.about-title { font-family: var(--serif); font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; line-height: 1.1; margin-bottom: 28px; }
+.about-title em { font-style: italic; color: var(--gold); }
+.about-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--text-muted); margin-bottom: 20px; }
+.about-quote { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--text-muted); border-left: 2px solid var(--gold); padding-left: 20px; margin: 28px 0; line-height: 1.7; }
+.about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-top: 36px; border-top: 1px solid rgba(181,152,106,.25); margin-top: 36px; }
+.stat-num { font-family: var(--serif); font-size: 44px; font-weight: 300; color: var(--gold); display: block; line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
+
+/* ── TÉMOIGNAGES ── */
+.testi-section { background: var(--dark); padding: 100px 64px; }
+.testi-title { font-family: var(--serif); font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--white); text-align: center; margin-bottom: 56px; }
 .testi-title em { font-style: italic; color: var(--gold-light); }
-.testi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(181,152,106,.08);
-}
-.testi-c {
-  background: var(--dark-mid);
-  padding: 56px 52px;
-  position: relative;
-}
-.testi-c::before {
-  content: '"';
-  position: absolute;
-  top: 32px;
-  left: 40px;
-  font-family: var(--serif);
-  font-size: 52px;
-  font-style: italic;
-  color: var(--gold);
-  opacity: .2;
-  line-height: 1;
-}
-.testi-tx {
-  font-family: var(--serif);
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.85;
-  color: rgba(253,252,249,.68);
-  margin-bottom: 40px;
-  padding-top: 16px;
-}
-.testi-au {
-  font-size: 10px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: .7;
-}
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.testi-card { background: var(--dark-mid); padding: 44px; position: relative; }
+.testi-card::before { content: '"'; position: absolute; top: 20px; left: 28px; font-family: var(--serif); font-size: 72px; font-style: italic; color: var(--gold); opacity: .25; line-height: 1; }
+.testi-text { font-family: var(--serif); font-size: 17px; font-style: italic; font-weight: 300; line-height: 1.75; color: rgba(253,252,249,.75); margin-bottom: 28px; padding-top: 8px; }
+.testi-author { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════ */
-@media(max-width:900px){
-  /* ── Hero mobile : plus de clip, contenu visible en entier ── */
-  .hero {
-    grid-template-columns: 1fr;
-    height: auto;
-    min-height: 100svh; /* safe viewport height pour les mobiles */
-    max-height: none;
-    overflow: visible; /* supprime le clipping qui cachait les boutons */
-  }
-  .hero-left {
-    padding: 100px 24px 56px;
-    min-height: unset;
-    justify-content: flex-start; /* contenu depuis le haut — plus de risque de débordement */
-    border-left: none;
-  }
-  .hero-title { font-size: clamp(52px, 14vw, 80px); margin-bottom: 20px; }
-  .hero-desc { margin-bottom: 0; }
-  .hero-actions { margin-top: 28px; padding-top: 24px; }
-  .hero-left::before { display: none; }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 120px 24px 72px; min-height: 100vh; }
   .hero-right { display: none; }
-  .hero-meta { flex-wrap: wrap; gap: 16px; margin-top: 28px; }
-  .about-strip { grid-template-columns: 1fr; padding: 80px 24px; gap: 40px; }
-  .about-photo-wrap { display: none; }
-  .intro { padding: 80px 24px; }
-  .svcs-dark { padding: 80px 24px; }
-  .svcs-grid { grid-template-columns: 1fr; }
-  .svcs-dark-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .meth { padding: 80px 24px; }
-  .meth-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .meth-steps::before { display: none; }
-  .projets-home { padding: 80px 24px; }
-  .projets-home-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .proj-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
-  .ph-col { flex-direction: row; }
-  .testi { padding: 80px 24px; }
-  .testi-grid { grid-template-columns: 1fr; background: none; gap: 2px; }
+  .intro { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+  .projets-section { padding: 72px 24px; }
+  .projets-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .projets-grid { grid-template-columns: 1fr; gap: 16px; }
+  .services-section { padding: 72px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .methode-section { padding: 72px 24px; }
+  .methode-steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .methode-steps::before { display: none; }
+  .about-section { grid-template-columns: 1fr; padding: 72px 24px; gap: 40px; }
+  .about-visual { display: none; }
+  .testi-section { padding: 72px 24px; }
+  .testi-grid { grid-template-columns: 1fr; }
 }
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Marion Balsaux","description":"Graphiste freelance et directrice artistique en Belgique — identité visuelle, packaging, illustration, site web sur-mesure.","url":"https://marionbalsaux.fr","email":"marionblsx@gmail.com","address":{"@type":"PostalAddress","addressCountry":"BE","addressRegion":"Brabant Wallon"},"priceRange":"€€","sameAs":["https://www.behance.net/marionbalsaux","https://www.malt.fr/profile/marionbalsaux","https://www.instagram.com/marion_blsx","https://www.tiktok.com/@marionbalsaux"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Identité visuelle & image de marque"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Création visuelle & direction artistique"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Supports de communication"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Site web sur-mesure"}}]}}
-</script>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:12px 24px;background:var(--dark);color:var(--white);font-size:14px;text-decoration:none;">Aller au contenu principal</a>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="follower"></div>
 
-<header>
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo">
-    <img src="images/site/logo-mb.svg" alt="MB" class="nav-logo-img">
-    <span class="nav-logo-mb"><span>Marion Balsaux</span><span>Direction Artistique</span></span>
-  </a>
+  <a href="index.html" class="nav-logo">Marion Balsaux</a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="approche.html">Approche</a></li>
@@ -744,340 +143,259 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Parlons-en</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- Menu mobile overlay -->
-<div class="nav-mobile-overlay" id="nav-mobile-overlay" role="dialog" aria-modal="true">
-  <ul class="nav-mobile-links">
-    <li><a href="index.html" class="active">Accueil</a></li>
-    <li><a href="approche.html">Approche</a></li>
-    <li><a href="projets.html">Projets</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-mobile-cta">Parlons de votre projet</a>
-  <span class="nav-mobile-deco">Marion Balsaux · Direction Artistique</span>
-</div>
-</header>
-
-<main id="main-content">
 <!-- HERO -->
 <section class="hero">
-  <canvas id="hero-smoke" aria-hidden="true"></canvas>
-  <div class="hero-bg-num">MB</div>
   <div class="hero-left">
-    <p class="hero-eyebrow">Direction artistique stratégique · Belgique</p>
-    <h1 class="hero-title">Marion<br><em>Balsaux</em></h1>
-    <p class="hero-desc">J'accompagne les porteurs de projets à impact — entrepreneurs, associations, structures culturelles — à construire une image qui reflète vraiment leur mission. Pas un graphiste de plus qui livre des fichiers : une partenaire qui comprend votre projet avant de créer.</p>
+    <p class="hero-eyebrow">Graphiste Belgique · Identité visuelle · Communication</p>
+    <h1 class="hero-title">
+      Balsaux<br>
+      <em>Marion©</em>
+    </h1>
+    <p class="hero-desc">Je crée des identités visuelles qui ont du sens — et je vous aide à construire une communication qui vous ressemble vraiment.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn--outline-w">Parlons de votre projet</a>
-      <a href="projets.html" class="btn btn--outline-w" style="background:transparent">Voir mes projets</a>
-    </div>
-    <div class="hero-meta">
-      <span class="hero-meta-item">Identité visuelle</span>
-      <span class="hero-meta-item">Packaging</span>
-      <span class="hero-meta-item">Illustration</span>
-      <span class="hero-meta-item">Site web</span>
+      <a href="contact.html" class="btn btn--outline-white">Parlons de votre projet</a>
+      <a href="projets.html" class="btn btn--outline-white" style="background:transparent">Voir mes projets</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="images/site/photo-marion-hero.webp" alt="Marion Balsaux graphiste" class="hero-photo">
-    <div class="hero-photo-overlay"></div>
+    <div class="hero-right-tags">
+      <span class="hero-tag">Illustration</span>
+      <span class="hero-tag">Identité visuelle</span>
+      <span class="hero-tag">Direction artistique</span>
+      <span class="hero-tag">Print & packaging</span>
+      <span class="hero-tag">Communication</span>
+      <span class="hero-tag">Site web sur-mesure</span>
+    </div>
+    <div class="hero-watermark">MB</div>
   </div>
-  <div class="hero-scroll"><div class="hero-line"></div><span>Scroll</span></div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-band">
   <div class="marquee-inner">
-    <span class="marquee-item">Identité visuelle & branding</span>
-    <span class="marquee-item">Packaging premium</span>
+    <span class="marquee-item">Stratégie avant esthétique</span>
+    <span class="marquee-item">Identité visuelle</span>
     <span class="marquee-item">Direction artistique</span>
-    <span class="marquee-item">Site web sur-mesure</span>
-    <span class="marquee-item">Entrepreneurs & associations</span>
-    <span class="marquee-item">Illustration & communication</span>
-    <span class="marquee-item">Belgique & France</span>
-    <span class="marquee-item">Identité visuelle & branding</span>
-    <span class="marquee-item">Packaging premium</span>
+    <span class="marquee-item">Illustration</span>
+    <span class="marquee-item">Packaging</span>
+    <span class="marquee-item">Monde culturel</span>
+    <span class="marquee-item">Stratégie avant esthétique</span>
+    <span class="marquee-item">Identité visuelle</span>
     <span class="marquee-item">Direction artistique</span>
-    <span class="marquee-item">Site web sur-mesure</span>
-    <span class="marquee-item">Entrepreneurs & associations</span>
-    <span class="marquee-item">Illustration & communication</span>
-    <span class="marquee-item">Belgique & France</span>
+    <span class="marquee-item">Illustration</span>
+    <span class="marquee-item">Packaging</span>
+    <span class="marquee-item">Monde culturel</span>
   </div>
 </div>
 
 <!-- INTRO / DIFFÉRENCE -->
 <section class="intro">
-  <div class="intro-inner">
-    <span class="label">Ma différence</span>
-    <h2 class="intro-title reveal">La plupart livrent des fichiers.<br>Moi, je <em>m'implique</em> dans votre projet.</h2>
-    <div class="pillars">
+  <div class="reveal-left">
+    <span class="section-label">Ma différence</span>
+    <h2 class="intro-title">La plupart livrent des fichiers. Moi, je <em>comprends</em> votre projet.</h2>
+  </div>
+  <div class="reveal-right">
+    <p class="intro-text">Avant de toucher un logiciel, je pose des questions. Je comprends votre univers, votre public, vos objectifs. C'est ce travail en amont qui fait la différence entre un visuel qu'on aime et un visuel qui fonctionne.</p>
+    <div class="intro-pillars">
       <div class="pillar reveal" data-delay="0">
-        <span class="pillar-name">Je comprends votre monde</span>
-        <span class="pillar-desc">Contraintes de marché, logiques budgétaires, enjeux humains — je parle le même langage que vous, que vous soyez entrepreneur, association ou structure culturelle.</span>
+        <span class="pillar-name">Direction artistique</span>
+        <span class="pillar-desc">Univers visuel, cohérence de marque, du brief au livrable final.</span>
       </div>
       <div class="pillar reveal" data-delay="80">
-        <span class="pillar-name">Je réfléchis avant de créer</span>
-        <span class="pillar-desc">Positionnement, message, identité — on pose les bases ensemble avant de toucher un logiciel. Le visuel est une conséquence, pas un point de départ.</span>
+        <span class="pillar-name">Stratégie avant esthétique</span>
+        <span class="pillar-desc">Je comprends votre enjeu avant de proposer une direction visuelle.</span>
       </div>
       <div class="pillar reveal" data-delay="160">
-        <span class="pillar-name">Je reste avec vous</span>
-        <span class="pillar-desc">Du premier échange à la livraison des fichiers — et au-delà si besoin. Un seul interlocuteur, disponible, qui connaît votre projet aussi bien que vous.</span>
+        <span class="pillar-name">Un interlocuteur unique</span>
+        <span class="pillar-desc">Du brief à la livraison, une seule personne à appeler.</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="svcs-dark">
-  <div class="svcs-dark-header reveal">
-    <div><span class="label label--light">Ce que je propose</span><h2 class="svcs-title">Mes <em>services</em></h2></div>
-    <a href="services.html" class="btn btn--outline-w" style="font-size:11px">Voir le détail</a>
+<!-- PROJETS -->
+<section class="projets-section">
+  <div class="projets-header reveal">
+    <div>
+      <span class="section-label">Exemples de créations</span>
+      <h2 class="projets-title">Mes <em>projets</em></h2>
+    </div>
+    <a href="projets.html" class="btn btn--light">Voir tout le portfolio</a>
   </div>
-  <div class="svcs-grid svcs-grid--5">
-    <div class="svc reveal" data-delay="0">
-      <span class="svc-n">01</span>
-      <h3 class="svc-t">Diagnostic stratégique visuel</h3>
-      <p class="svc-d">Votre image reflète-t-elle vraiment qui vous êtes ? Une immersion dans votre projet pour identifier le décalage entre votre mission et votre communication visuelle.</p>
-      <div class="svc-tags"><span class="svc-tag">Entretien stratégique</span><span class="svc-tag">Analyse complète</span><span class="svc-tag">Feuille de route</span></div>
-      <span class="svc-price">À partir de 350€</span>
+  <div class="projets-grid">
+    <a href="projets.html" class="projet-card reveal" data-delay="0">
+      <div class="projet-img-placeholder projet-placeholder-bg">
+        <span class="projet-placeholder-label">Les Royales Marionnettes</span>
+      </div>
+      <div class="projet-card-content">
+        <span class="projet-cat">Print & communication</span>
+        <span class="projet-name">Les Royales Marionnettes</span>
+      </div>
+    </a>
+    <a href="projets.html" class="projet-card reveal" data-delay="100">
+      <div class="projet-img-placeholder projet-placeholder-bg">
+        <span class="projet-placeholder-label">Illustration</span>
+      </div>
+      <div class="projet-card-content">
+        <span class="projet-cat">Illustration & création</span>
+        <span class="projet-name">Illustration vectorielle</span>
+      </div>
+    </a>
+    <a href="projets.html" class="projet-card reveal" data-delay="200">
+      <div class="projet-img-placeholder projet-placeholder-bg">
+        <span class="projet-placeholder-label">Lucha Sigue</span>
+      </div>
+      <div class="projet-card-content">
+        <span class="projet-cat">Identité visuelle & branding</span>
+        <span class="projet-name">Lucha Sigue</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-header reveal">
+    <span class="section-label section-label--light">Ce que je propose</span>
+    <h2 class="services-title">Mes <em>services</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal" data-delay="0">
+      <span class="service-num">01</span>
+      <h3 class="service-title">Création visuelle & direction artistique</h3>
+      <p class="service-text">Illustrations, affiches, visuels réseaux — des contenus visuels qui ont un univers propre et donnent une vraie présence à votre projet.</p>
+      <div class="service-tags">
+        <span class="service-tag">Direction artistique</span>
+        <span class="service-tag">Illustration & contenus</span>
+        <span class="service-tag">Cohérence visuelle</span>
+      </div>
     </div>
-    <div class="svc reveal" data-delay="60">
-      <span class="svc-n">02</span>
-      <h3 class="svc-t">Création visuelle & direction artistique</h3>
-      <p class="svc-d">Illustrations, affiches, visuels réseaux — des contenus qui ont un univers propre.</p>
-      <div class="svc-tags"><span class="svc-tag">Direction artistique</span><span class="svc-tag">Illustration</span><span class="svc-tag">Cohérence visuelle</span></div>
-      <span class="svc-price">Sur devis</span>
+    <div class="service-card reveal" data-delay="80">
+      <span class="service-num">02</span>
+      <h3 class="service-title">Identité & image de marque</h3>
+      <p class="service-text">Logo, palette, typographies, charte — une identité visuelle qui reflète qui vous êtes vraiment. On commence toujours par la stratégie.</p>
+      <div class="service-tags">
+        <span class="service-tag">Logo & identité</span>
+        <span class="service-tag">Palette & typographies</span>
+        <span class="service-tag">Charte graphique</span>
+      </div>
     </div>
-    <div class="svc reveal" data-delay="120">
-      <span class="svc-n">03</span>
-      <h3 class="svc-t">Identité & image de marque</h3>
-      <p class="svc-d">Logo, palette, charte — une identité visuelle qui reflète qui vous êtes vraiment.</p>
-      <div class="svc-tags"><span class="svc-tag">Logo & identité</span><span class="svc-tag">Charte graphique</span><span class="svc-tag">Stratégie</span></div>
-      <span class="svc-price">À partir de 800€</span>
+    <div class="service-card reveal" data-delay="160">
+      <span class="service-num">03</span>
+      <h3 class="service-title">Supports de communication</h3>
+      <p class="service-text">Affiches, packaging, brochures, templates réseaux — votre identité déclinée sur tous les supports avec une cohérence impeccable.</p>
+      <div class="service-tags">
+        <span class="service-tag">Réseaux sociaux</span>
+        <span class="service-tag">Print & packaging</span>
+        <span class="service-tag">Abonnement mensuel</span>
+      </div>
     </div>
-    <div class="svc reveal" data-delay="180">
-      <span class="svc-n">04</span>
-      <h3 class="svc-t">Supports de communication</h3>
-      <p class="svc-d">Print, packaging, réseaux — votre identité déclinée avec cohérence sur tous les formats.</p>
-      <div class="svc-tags"><span class="svc-tag">Projet ponctuel · sur devis</span><span class="svc-tag">Abonnement · dès 400€/mois</span></div>
-    </div>
-    <div class="svc reveal" data-delay="240">
-      <span class="svc-n">05</span>
-      <h3 class="svc-t">Site web sur-mesure</h3>
-      <p class="svc-d">Du logo au site en ligne — votre identité prolongée sur le web avec cohérence.</p>
-      <div class="svc-tags"><span class="svc-tag">Sites vitrines & portfolios</span><span class="svc-tag">Cohérence identité</span><span class="svc-tag">Un seul interlocuteur</span></div>
-      <span class="svc-price">À partir de 1 000€</span>
+    <div class="service-card reveal" data-delay="240">
+      <span class="service-num">04</span>
+      <h3 class="service-title">Site web sur-mesure</h3>
+      <p class="service-text">En partenariat avec un développeur, je propose des sites personnalisés, cohérents avec votre identité visuelle. Du logo au site en ligne.</p>
+      <div class="service-tags">
+        <span class="service-tag">Site personnalisé</span>
+        <span class="service-tag">Cohérence identité & site</span>
+        <span class="service-tag">Un seul interlocuteur</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- MÉTHODE -->
-<section class="meth">
-  <h2 class="meth-title reveal">Comment je <em>travaille</em></h2>
-  <div class="meth-steps">
-    <div class="meth-step reveal" data-delay="0"><div class="meth-num">01</div><h3 class="meth-nt">Clarifier</h3><p class="meth-nd">Votre projet, votre public, vos objectifs. Ce brief approfondi est la fondation de tout.</p></div>
-    <div class="meth-step reveal" data-delay="100"><div class="meth-num">02</div><h3 class="meth-nt">Structurer</h3><p class="meth-nd">Direction créative, univers visuel, messages clés. Vous validez avant la création.</p></div>
-    <div class="meth-step reveal" data-delay="200"><div class="meth-num">03</div><h3 class="meth-nt">Créer</h3><p class="meth-nd">Visuels conçus pour l'utilité finale. Vous êtes associé·e au processus.</p></div>
-    <div class="meth-step reveal" data-delay="300"><div class="meth-num">04</div><h3 class="meth-nt">Développer</h3><p class="meth-nd">Livraison, prise en main, suivi long terme si besoin.</p></div>
+<section class="methode-section">
+  <div class="methode-header reveal">
+    <span class="section-label">Ma méthode</span>
+    <h2 class="methode-title">Comment je <em>travaille</em></h2>
+    <p class="methode-sub">Chaque projet suit ce fil conducteur — quelle que soit sa taille ou sa nature.</p>
   </div>
-</section>
-
-<!-- PROJETS APERÇU — 4 colonnes -->
-<section class="projets-home">
-  <div class="projets-home-header reveal">
-    <div><span class="label">Portfolio</span><h2 class="projets-title">Mes <em>projets</em></h2></div>
-    <a href="projets.html" class="btn btn--light">Voir tout le portfolio</a>
-  </div>
-  <div class="proj-grid">
-
-    <a href="projets.html#royales" class="proj-thumb reveal" data-delay="0">
-      <span class="proj-thumb-num">01</span>
-      <div class="proj-thumb-img">
-        <img src="images/royales/royales-01.webp" alt="Les Royales Marionnettes">
-      </div>
-      <div class="proj-thumb-overlay">
-        <span class="proj-thumb-cat">Branding · Print · Scénographie</span>
-        <span class="proj-thumb-name">Les Royales Marionnettes</span>
-        <span class="proj-thumb-arrow">→</span>
-      </div>
-    </a>
-
-    <a href="projets.html#lucha" class="proj-thumb reveal" data-delay="80">
-      <span class="proj-thumb-num">02</span>
-      <div class="proj-thumb-img">
-        <img src="images/lucha/lucha-02.webp" alt="Lucha Sigue">
-      </div>
-      <div class="proj-thumb-overlay">
-        <span class="proj-thumb-cat">Branding · Identité · Packaging</span>
-        <span class="proj-thumb-name">Lucha Sigue</span>
-        <span class="proj-thumb-arrow">→</span>
-      </div>
-    </a>
-
-    <a href="projets.html#dad" class="proj-thumb reveal" data-delay="160">
-      <span class="proj-thumb-num">03</span>
-      <div class="proj-thumb-img">
-        <img src="images/dad/dad-01.webp" alt="Illustration vectorielle">
-      </div>
-      <div class="proj-thumb-overlay">
-        <span class="proj-thumb-cat">Illustration vectorielle</span>
-        <span class="proj-thumb-name">Illustration vectorielle</span>
-        <span class="proj-thumb-arrow">→</span>
-      </div>
-    </a>
-
-    <a href="projets.html#suite" class="proj-thumb reveal" data-delay="240">
-      <span class="proj-thumb-num">04</span>
-      <div class="proj-thumb-img">
-        <img src="images/suite/suite-02.webp" alt="La Suite du Monde">
-      </div>
-      <div class="proj-thumb-overlay">
-        <span class="proj-thumb-cat">Illustration · Web · Stratégie</span>
-        <span class="proj-thumb-name">La Suite du Monde</span>
-        <span class="proj-thumb-arrow">→</span>
-      </div>
-    </a>
-
-  </div>
-  <div class="ph-footer reveal"><a href="projets.html" class="btn btn--dark">Voir les 7 projets →</a></div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-strip">
-  <div class="about-photo-wrap reveal-l">
-    <img src="images/site/photo-marion2.webp" alt="Marion Balsaux" class="about-photo">
-    <div class="about-photo-deco"></div>
-  </div>
-  <div class="reveal-r">
-    <span class="label">À propos de moi</span>
-    <h2 class="about-title">Derrière chaque projet, une vraie <em>conversation.</em></h2>
-    <p class="about-text">Je m'appelle Marion. Graphiste et directrice artistique basée en Belgique, mon parcours croise les sciences politiques, la gestion de projet culturel et la direction artistique en startup — une combinaison qui me donne une lecture du projet à la fois stratégique et humaine.</p>
-    <p class="about-text">Entrepreneuse moi-même, je comprends les contraintes réelles : budget, marché, message difficile à formuler. Je travaille avec des entrepreneurs qui construisent leur projet de vie, des associations qui ont quelque chose d'essentiel à porter, des structures culturelles qui méritent une image à la hauteur de leur mission. Pour tous, la même exigence : comprendre avant de créer.</p>
-    <blockquote class="about-quote">« Ce n'est pas juste un logo que je conçois. C'est la façon dont le monde va vous voir — et dont vous allez vous voir vous-même. »</blockquote>
-    <div class="about-stats">
-      <div><span class="stat-n">Belgique</span><span class="stat-l">& France</span></div>
-      <div><span class="stat-n">Culturel</span><span class="stat-l">Entrepreneurial · Associatif</span></div>
-      <div><span class="stat-n">100%</span><span class="stat-l">Sur-mesure</span></div>
+  <div class="methode-steps">
+    <div class="step reveal" data-delay="0">
+      <div class="step-num">1</div>
+      <h3 class="step-title">Clarifier</h3>
+      <p class="step-text">Avant de créer quoi que ce soit, je prends le temps de comprendre votre projet, votre public et vos objectifs. Ce brief approfondi est la fondation de tout ce qui suit.</p>
+    </div>
+    <div class="step reveal" data-delay="100">
+      <div class="step-num">2</div>
+      <h3 class="step-title">Structurer</h3>
+      <p class="step-text">Je définis une direction créative claire : univers visuel, ton, messages clés. Vous validez avant qu'on passe à la création — pas de surprises en fin de projet.</p>
+    </div>
+    <div class="step reveal" data-delay="200">
+      <div class="step-num">3</div>
+      <h3 class="step-title">Créer</h3>
+      <p class="step-text">Je conçois vos visuels en gardant toujours en tête l'utilité finale. Vous êtes associé·e au processus, pas mis devant le fait accompli.</p>
+    </div>
+    <div class="step reveal" data-delay="300">
+      <div class="step-num">4</div>
+      <h3 class="step-title">Développer</h3>
+      <p class="step-text">Livraison des fichiers, accompagnement à la prise en main si besoin, et possibilité de suivi sur le long terme. Votre communication ne s'arrête pas à la livraison.</p>
     </div>
   </div>
 </section>
 
-<!-- TESTI -->
-<section class="testi">
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-visual reveal-left">
+    <div class="about-img-placeholder"><span>Photo Marion</span></div>
+    <div class="about-deco"></div>
+  </div>
+  <div class="reveal-right">
+    <span class="section-label">À propos de moi</span>
+    <h2 class="about-title">Derrière chaque projet, une vraie <em>conversation.</em></h2>
+    <p class="about-text">Je m'appelle Marion. Graphiste et directrice artistique basée en Belgique, avec un parcours entre sciences politiques, gestion de projet culturel et direction artistique en startup. Ce chemin m'a appris à penser à la fois stratégie et sensibilité, efficacité et identité.</p>
+    <p class="about-text">Je ne reçois pas un brief pour l'exécuter — je m'y plonge. Je pose des questions, je challenge les idées, je propose des directions. Mon objectif : que vous repartiez avec des visuels que vous aimez et une vision plus claire de votre communication.</p>
+    <blockquote class="about-quote">« Ensemble, nous allons transformer une idée floue en un projet clair, structuré et concret. »</blockquote>
+    <div class="about-stats">
+      <div><span class="stat-num">05+</span><span class="stat-label">Années d'expérience</span></div>
+      <div><span class="stat-num">100%</span><span class="stat-label">Sur-mesure — jamais d'exécution à l'aveugle</span></div>
+      <div><span class="stat-num">3</span><span class="stat-label">Univers maîtrisés : culturel, startups, indépendants</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testi-section">
   <h2 class="testi-title reveal">Ce qu'ils <em>disent</em></h2>
   <div class="testi-grid">
-    <div class="testi-c reveal" data-delay="0"><p class="testi-tx">Marion a su comprendre rapidement notre identité et structurer notre communication. Aujourd'hui, nos visuels sont plus cohérents et notre image beaucoup plus claire.</p><span class="testi-au">La Suite du Monde — CEO</span></div>
-    <div class="testi-c reveal" data-delay="120"><p class="testi-tx">Marion est à l'écoute et sait s'adapter à différents projets. Son travail est précis, créatif et toujours pertinent.</p><span class="testi-au">Cryptor — CEO</span></div>
+    <div class="testi-card reveal" data-delay="0">
+      <p class="testi-text">Marion a su comprendre rapidement notre identité et structurer notre communication. Aujourd'hui, nos visuels sont plus cohérents et notre image beaucoup plus claire.</p>
+      <span class="testi-author">La Suite du Monde — CEO</span>
+    </div>
+    <div class="testi-card reveal" data-delay="120">
+      <p class="testi-text">Marion est à l'écoute et sait s'adapter à différents projets. Son travail est précis, créatif et toujours pertinent.</p>
+      <span class="testi-author">Cryptor — CEO</span>
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
-  <img src="images/site/logo_initiales.webp" alt="" class="cta-mb-watermark" aria-hidden="true">
-  <div class="cta-mb-seal reveal">
-    <span class="cta-mb-letters">MB</span>
-  </div>
-  <span class="label" style="display:block;text-align:center;margin-bottom:20px;">Un projet en tête ?</span>
+  <span class="section-label">Un projet en tête ?</span>
   <h2 class="cta-title reveal">Parlons de<br><em>votre projet.</em></h2>
-  <p class="cta-text reveal">Premier échange sans engagement — je réponds sous 48h.</p>
+  <p class="cta-text reveal">Que vous ayez une idée précise ou que vous cherchiez encore votre direction, je vous propose un premier échange sans engagement.</p>
   <a href="contact.html" class="btn btn--dark reveal">Prendre contact</a>
+  <span class="cta-note">Premier échange sans engagement — je réponds sous 48h.</span>
 </section>
-</main>
 
 <footer>
-  <a href="index.html" class="footer-logo-wrap">
-    <img src="images/site/logo_horizontal-white.webp" alt="Marion Balsaux" class="footer-logo-img" >
-  </a>
+  <a href="index.html" class="footer-logo">Marion Balsaux©</a>
   <ul class="footer-nav">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="approche.html">Approche</a></li>
     <li><a href="projets.html">Projets</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
   <span class="footer-copy">© 2026 Marion Balsaux</span>
 </footer>
+
 <script src="main.js"></script>
-<script>
-/* ── Smoke hero animation ── */
-window.addEventListener('load', function() {
-  const canvas = document.getElementById('hero-smoke');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W = 0, H = 0, wisps = [], raf;
-
-  function resize() {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    W = canvas.width  = Math.round(rect.width)  || window.innerWidth;
-    H = canvas.height = Math.round(rect.height) || Math.round(window.innerHeight * 0.86);
-    /* Réinitialiser les volutes si on change de taille */
-    if (wisps.length) wisps.forEach(w => w.reset(true));
-  }
-
-  function Wisp() { this.reset(true); }
-  Wisp.prototype.reset = function(spread) {
-    this.x    = Math.random() * W;
-    this.y    = spread ? Math.random() * H : H + Math.random() * 80;
-    this.r    = Math.random() * 90 + 50;          /* rayon 50–140 px */
-    this.vx   = (Math.random() - 0.5) * 0.3;
-    this.vy   = -(Math.random() * 0.3 + 0.1);
-    this.grow = Math.random() * 0.15 + 0.05;
-    this.maxO = Math.random() * 0.12 + 0.05;      /* 5–17 % — visible */
-    this.life = 0;
-    this.span = 260 + Math.floor(Math.random() * 300);
-  };
-  Wisp.prototype.tick = function() {
-    this.x += this.vx;
-    this.y += this.vy;
-    this.r += this.grow;
-    this.life++;
-    const p = this.life / this.span;
-    this.opacity = p < 0.25 ? (p / 0.25) * this.maxO
-                 : p > 0.70 ? ((1 - p) / 0.30) * this.maxO
-                 : this.maxO;
-    if (this.life >= this.span || this.y + this.r < 0) this.reset(false);
-  };
-  Wisp.prototype.draw = function() {
-    const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
-    g.addColorStop(0,    `rgba(181,152,106,${this.opacity})`);
-    g.addColorStop(0.5,  `rgba(181,152,106,${(this.opacity * 0.3).toFixed(3)})`);
-    g.addColorStop(1,    'rgba(181,152,106,0)');
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = g;
-    ctx.fill();
-  };
-
-  function loop() {
-    ctx.clearRect(0, 0, W, H);
-    wisps.forEach(w => { w.tick(); w.draw(); });
-    raf = requestAnimationFrame(loop);
-  }
-
-  resize();
-  wisps = Array.from({ length: 22 }, () => new Wisp());
-  loop();
-
-  window.addEventListener('resize', resize);
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(raf);
-    else loop();
-  });
-});
-</script>
-
-<!-- ══ Cookie Consent Banner ══ -->
-<div id="cookie-banner" style="display:none;opacity:0;transform:translateY(calc(100% + 20px));transition:transform 0.4s ease,opacity 0.4s ease;position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(calc(100% + 20px));width:min(92vw,640px);background:#1a1a1a;color:#f0f0f0;border-radius:12px;padding:20px 24px;z-index:9999;box-shadow:0 8px 40px rgba(0,0,0,0.35);font-family:'DM Sans',sans-serif;font-size:0.875rem;gap:16px;flex-direction:column;align-items:flex-start;" role="alertdialog" aria-label="Consentement aux cookies">
-  <p style="margin:0;line-height:1.6;color:#ddd;">Ce site utilise <strong style="color:#fff;">Google Analytics</strong> pour mesurer son audience. Ces cookies sont optionnels — votre choix est mémorisé pendant 13 mois. <a href="mentions-legales.html" style="color:#ccc;text-underline-offset:3px;">En savoir plus</a></p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <button id="cookie-accept" style="background:#fff;color:#1a1a1a;border:none;border-radius:6px;padding:9px 20px;font-size:0.875rem;font-weight:500;cursor:pointer;font-family:inherit;letter-spacing:0.02em;">Accepter</button>
-    <button id="cookie-reject" style="background:transparent;color:#aaa;border:1px solid #444;border-radius:6px;padding:9px 20px;font-size:0.875rem;cursor:pointer;font-family:inherit;letter-spacing:0.02em;">Refuser</button>
-  </div>
-</div>
-<script src="cookie-consent.js"></script>
 </body>
 </html>
