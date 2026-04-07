@@ -19,10 +19,13 @@
   }
 
   function enableAnalytics() {
-    // Activate Google Analytics after consent
+    // Consent Mode v2 — grant all types after user acceptance
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
-        'analytics_storage': 'granted'
+        'analytics_storage': 'granted',
+        'ad_storage': 'denied',        // Pas de pub — on reste RGPD-friendly
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
       });
     }
   }
@@ -30,7 +33,10 @@
   function disableAnalytics() {
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
-        'analytics_storage': 'denied'
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
       });
     }
   }
